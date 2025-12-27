@@ -1,0 +1,62 @@
+/* Custom Navbar Styling - Reduced size and rounded corners */
+
+/* Reduce navbar padding to fit logo better */
+.header-main {
+    padding: 5px 0 !important;
+    /* Reduced from 10px to 5px for tighter fit */
+}
+
+/* Add rounded corners to the navbar - for header-1 */
+.header-1 {
+    border-radius: 15px;
+    overflow: hidden;
+    /* Ensures content respects border radius */
+    margin: 10px 0;
+    /* Add some margin for visual spacing */
+}
+
+/* Add rounded corners to the navbar - for header-3 */
+.header-3 {
+    border-radius: 15px;
+    overflow: visible;
+    /* Allow dropdowns to show */
+}
+
+.header-3 .header-main {
+    border-radius: 15px;
+    padding: 5px 30px !important;
+    /* Add horizontal padding, reduce vertical */
+}
+
+/* Ensure sticky navbar also has rounded corners */
+.sticky.header-1,
+.sticky.header-3 {
+    border-radius: 15px;
+    margin: 10px auto;
+    max-width: calc(100% - 20px);
+    /* Slight margin from edges */
+    left: 10px;
+    width: calc(100% - 20px);
+}
+
+.sticky.header-3 .header-main {
+    border-radius: 15px;
+}
+
+/* Adjust menu item padding for better vertical alignment */
+.header-main .main-menu ul li a {
+    padding: 12px 0 !important;
+    /* Reduced from 20px to 12px */
+}
+
+/* Ensure the logo container has minimal padding and proper alignment */
+.header-main .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust header-right alignment */
+.header-main .header-right {
+    display: flex;
+    align-items: center;
+}

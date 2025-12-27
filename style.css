@@ -49,7 +49,7 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     Template Section Styles
  ------------------------------------*/
 
- /* // Menu - Header Section 
+/* // Menu - Header Section 
  @import 'header';
  
  // Hero Slide - Section 
@@ -105,3 +105,86 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
 
 
 
+/* Custom Service Section Styles for Equal Height Cards */
+.service-section .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.service-section .service-box-items {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-section .service-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-section .service-content h3 {
+    margin-bottom: 15px;
+}
+
+.service-section .service-content p {
+    margin-bottom: 15px;
+}
+
+.service-section .service-content h5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #556B2F;
+}
+
+.service-section .service-content ul {
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.service-section .service-content .link-btn {
+    margin-top: auto;
+}
+
+/* Custom Contact Form Dropdown Styles */
+.contact-section-3 .form-clt .nice-select {
+    color: #333 !important;
+    background-color: transparent;
+}
+
+.contact-section-3 .form-clt .nice-select .current {
+    color: #333 !important;
+}
+
+.contact-section-3 .form-clt .nice-select .list {
+    background-color: #fff;
+    z-index: 999;
+}
+
+.contact-section-3 .form-clt .nice-select .option {
+    color: #333 !important;
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.contact-section-3 .form-clt .nice-select .option:hover,
+.contact-section-3 .form-clt .nice-select .option.focus,
+.contact-section-3 .form-clt .nice-select .option.selected.focus {
+    background-color: #f0f0f0;
+}
+
+/* Fix Contact Section Image Alignment - Override negative top */
+.contact-section-3 .contact-image {
+    top: 0 !important;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contact-section-3 .contact-image img {
+    object-fit: cover;
+    object-position: center top;
+    height: 100%;
+    width: 100%;
+}
