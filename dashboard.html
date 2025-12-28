@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="modinatheme">
-    <meta name="description" content="SolarGlow & Solar Renewable Energy Html Template">
+    <meta name="description" content="MN Enterprises Dashboard - Solar & Renewable Energy">
     <!-- ======== Page title ============ -->
-    <title>SolarGlow & Solar Renewable Energy Html Template</title>
+    <title>Dashboard - MN Enterprises</title>
     <!--<< Favicon >>-->
-    <link rel="shortcut icon" href="assets/img/favicon.svg">
+    <link rel="shortcut icon" href="assets/img/logo/MN LOGO.svg">
     <!--<< Bootstrap min.css >>-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!--<< Font Awesome.css >>-->
@@ -36,6 +36,243 @@
     <link rel="stylesheet" href="assets/css/custom-navbar.css">
     <!--<< Footer Custom CSS >>-->
     <link rel="stylesheet" href="assets/css/footer-custom.css">
+
+    <style>
+        /* Dashboard Password Modal Styles */
+        .dashboard-password-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            width: 90%;
+            max-width: 450px;
+            border: 2px solid #6b8e23;
+        }
+
+        .dashboard-password-modal.active {
+            display: block;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
+
+        .dashboard-password-modal h3 {
+            color: #6b8e23;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .dashboard-password-modal p {
+            color: #ccc;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .password-input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .password-input-group input {
+            width: 100%;
+            padding: 15px 45px 15px 15px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .password-input-group input:focus {
+            outline: none;
+            border-color: #6b8e23;
+            box-shadow: 0 0 10px rgba(107, 142, 35, 0.3);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #888;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #6b8e23;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-btn-submit {
+            background: linear-gradient(135deg, #6b8e23 0%, #556b2f 100%);
+            color: #fff;
+        }
+
+        .modal-btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 142, 35, 0.4);
+        }
+
+        .modal-btn-cancel {
+            background: #444;
+            color: #fff;
+        }
+
+        .modal-btn-cancel:hover {
+            background: #555;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            75% {
+                transform: translateX(10px);
+            }
+        }
+
+        /* Dashboard Content Styles */
+        .dashboard-content {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 250px 0 100px 0;
+        }
+
+        .dashboard-locked {
+            text-align: center;
+            color: #888;
+        }
+
+        .dashboard-locked i {
+            font-size: 80px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-locked h2 {
+            color: #666;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .dashboard-locked p {
+            color: #888;
+            font-size: 16px;
+        }
+
+        .dashboard-unlocked {
+            display: none;
+            padding: 50px 0;
+        }
+
+        .dashboard-unlocked.active {
+            display: block;
+        }
+
+        .dashboard-welcome {
+            background: linear-gradient(135deg, #6b8e23 0%, #556b2f 100%);
+            color: #fff;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .dashboard-welcome h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .dashboard-welcome p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Footer M clickable style */
+        .footer-m-trigger {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            color: inherit !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,43 +283,46 @@
             <div class="spinner">
             </div>
             <div class="txt-loading">
-                <span data-text-preloader="S" class="letters-loading">
+                <span data-text-preloader="M" class="letters-loading">
                     M
                 </span>
-                <span data-text-preloader="O" class="letters-loading">
+                <span data-text-preloader="N" class="letters-loading">
                     N
                 </span>
-                <span data-text-preloader="L" class="letters-loading">
+                <span data-text-preloader="" class="letters-loading">
+
+                </span>
+                <span data-text-preloader="E" class="letters-loading">
                     E
                 </span>
-                <span data-text-preloader="A" class="letters-loading">
+                <span data-text-preloader="N" class="letters-loading">
                     N
                 </span>
-                <span data-text-preloader="R" class="letters-loading">
+                <span data-text-preloader="T" class="letters-loading">
                     T
                 </span>
-                <span data-text-preloader="G" class="letters-loading">
+                <span data-text-preloader="E" class="letters-loading">
                     E
                 </span>
-                <span data-text-preloader="L" class="letters-loading">
+                <span data-text-preloader="R" class="letters-loading">
                     R
                 </span>
-                <span data-text-preloader="O" class="letters-loading">
+                <span data-text-preloader="P" class="letters-loading">
                     P
                 </span>
-                <span data-text-preloader="W" class="letters-loading">
+                <span data-text-preloader="R" class="letters-loading">
                     R
                 </span>
-                <span data-text-preloader="W" class="letters-loading">
+                <span data-text-preloader="I" class="letters-loading">
                     I
                 </span>
-                <span data-text-preloader="W" class="letters-loading">
+                <span data-text-preloader="S" class="letters-loading">
                     S
                 </span>
-                <span data-text-preloader="W" class="letters-loading">
+                <span data-text-preloader="E" class="letters-loading">
                     E
                 </span>
-                <span data-text-preloader="W" class="letters-loading">
+                <span data-text-preloader="S" class="letters-loading">
                     S
                 </span>
             </div>
@@ -183,10 +423,10 @@
                             </a>
                         </div>
                         <div class="social-icon d-flex align-items-center">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/share/1CZJM6XeSp/?mibextid=wwXIfr"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/mnenterprises2025?igsh=emt5NjBpZmJvOXR6&utm_source=qr"><i
+                                    class="fa-brands fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -195,108 +435,62 @@
     </div>
     <div class="offcanvas__overlay"></div>
 
-    <!-- Header Top Section Start -->
-    <div class="header-top">
-        <div class="container-fluid">
-            <div class="header-top-wrapper">
-                <ul class="contact-list">
-                    <li>
-                        <i class="fa-solid fa-phone"></i>
-                        <a href="tel:+919010100175">+919010100175, <br>+919676468976 </a>
-                    </li>
-                    <li>
-                        <i class="far fa-envelope"></i>
-                        <a href="mnenterprises.atp@gmail.com" class="link">mnenterprises.atp@gmail.com</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-location-dot"></i>
-                        6‑71, Near ACB Office, TV Tower, <br>
-                        Lenin Nagar, Anantapur – 515001.
-                    </li>
-                </ul>
-                <div class="top-right">
-                    <div class="social-icon d-flex align-items-center">
-                        <span>Follow Us:</span>
-                        <a href="https://www.facebook.com/share/1CZJM6XeSp/?mibextid=wwXIfr"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/mnenterprises2025?igsh=emt5NjBpZmJvOXR6&utm_source=qr"><i
-                                class="fa-brands fa-instagram"></i></a>
+    <!-- Header Section Start -->
+    <header class="header-section-2">
+        <div class="header-top style-bg">
+            <div class="container">
+                <div class="header-top-wrapper style-2">
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919010100175">+919010100175, <br>+919676468976 </a>
+                        </li>
+                        <li>
+                            <i class="far fa-envelope"></i>
+                            <a href="mnenterprises.atp@gmail.com" class="link">mnenterprises.atp@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            6‑71, Near ACB Office, TV Tower, <br>
+                            Lenin Nagar, Anantapur – 515001.
+                        </li>
+                    </ul>
+                    <div class="top-right">
+                        <div class="social-icon d-flex align-items-center">
+                            <span>Follow Us:</span>
+                            <a href="https://www.facebook.com/share/1CZJM6XeSp/?mibextid=wwXIfr"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/mnenterprises2025?igsh=emt5NjBpZmJvOXR6&utm_source=qr"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Header Section Start -->
-    <header id="header-sticky" class="header-1">
-        <div class="container-fluid">
-            <div class="mega-menu-wrapper">
-                <div class="header-main">
-                    <div class="logo">
-                        <a href="index.html" class="header-logo">
-                            <img src="assets/img/logo/MN LOGO.svg" style=" width: 10rem;" alt="logo-img">
-                        </a>
-                    </div>
-                    <div class="header-left">
+        <div id="header-sticky" class="header-3">
+            <div class="container">
+                <div class="mega-menu-wrapper">
+                    <div class="header-main">
+                        <div class="header-left">
+                            <div class="logo">
+                                <a href="index.html" class="header-logo">
+                                    <img src="assets/img/logo/white-logo.svg" alt="logo-img">
+                                </a>
+                                <a href="index.html" class="header-logo-2">
+                                    <img src="assets/img/logo/MN LOGO.svg" style=" width: 10rem;" alt="logo-img">
+                                </a>
+                            </div>
+                        </div>
                         <div class="mean__menu-wrapper">
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li class="has-dropdown active menu-thumb">
+                                        <li class="has-dropdown menu-thumb">
                                             <a href="index.html">
                                                 Home
-                                                <!-- <i class="fas fa-angle-down"></i> -->
                                             </a>
-                                            <!-- <ul class="submenu has-homemenu">
-                                                    <li>
-                                                        <div class="homemenu-items">
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb">
-                                                                    <img src="assets/img/header/home-1.jpg" alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index.html" class="theme-btn">Multi Page</a>
-                                                                        <a href="index-one-page.html" class="theme-btn">One Page</a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 01
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <img src="assets/img/header/home-2.jpg" alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index-2.html" class="theme-btn">Multi Page</a>
-                                                                        <a href="index-two-page.html" class="theme-btn">One Page</a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 02
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <img src="assets/img/header/home-3.jpg" alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index-3.html" class="theme-btn">Multi Page</a>
-                                                                        <a href="index-three-page.html" class="theme-btn">One Page</a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 03
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul> -->
                                         </li>
-                                        <li class="has-dropdown active d-xl-none">
+                                        <li class="has-dropdown d-xl-none">
                                             <a href="team.html" class="border-none">
                                                 Home
                                                 <i class="fas fa-angle-down"></i>
@@ -311,7 +505,7 @@
                                             <a href="about.html">About Us</a>
                                         </li>
                                         <li><a href="service.html">Services</a></li>
-                                        <li class="has-dropdown">
+                                        <li class="has-dropdown active">
                                             <a href="news.html">
                                                 Pages
                                                 <i class="fas fa-angle-down"></i>
@@ -323,10 +517,9 @@
                                                 <li>
                                                     <a href="team.html">Team</a>
                                                 </li>
-                                                <li>
+                                                <li class="active">
                                                     <a href="dashboard.html">Dashboard</a>
                                                 </li>
-
                                             </ul>
                                         </li>
                                         <li>
@@ -336,7 +529,6 @@
                                             </a>
                                             <ul class="submenu">
                                                 <li><a href="news.html">Blog</a></li>
-
                                             </ul>
                                         </li>
                                         <li>
@@ -346,17 +538,18 @@
                                 </nav>
                             </div>
                         </div>
-                    </div>
-                    <div class="header-right d-flex justify-content-end align-items-center">
-                        <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a>
-                        <div class="header-button">
-                            <a href="contact.html" class="theme-btn">
-                                Get a quote <i class="fas fa-arrow-right-long"></i>
-                            </a>
-                        </div>
-                        <div class="header__hamburger d-xl-none my-auto">
-                            <div class="sidebar__toggle">
-                                <i class="fas fa-bars"></i>
+                        <div class="header-right d-flex justify-content-end align-items-center">
+                            <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a>
+                            <div class="header__hamburger d-xl-block my-auto">
+                                <div class="sidebar__toggle">
+                                    <i class="fas fa-bars"></i>
+                                </div>
+                            </div>
+                            <div class="header-button">
+                                <a href="contact.html" class="theme-btn">
+                                    get Started
+                                    <i class="fas fa-arrow-right-long"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -379,177 +572,41 @@
         </div>
     </div>
 
-    <!-- Breadcrumb Section Start -->
-    <div class="page-banner-wrap text-center bg-cover section-padding"
-        style="background-image: url('assets/img/page-banner.jpg')">
-        <div class="container">
-            <div class="page-heading text-white">
-                <h1>Project</h1>
-            </div>
+    <!-- Password Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="dashboard-password-modal" id="passwordModal">
+        <h3>Access Dashboard</h3>
+        <p>Enter the password to unlock dashboard content</p>
+        <div class="password-input-group">
+            <input type="password" id="dashboardPassword" placeholder="Enter password">
+            <i class="fas fa-eye password-toggle" id="togglePassword"></i>
         </div>
-    </div>
-    <div class="breadcrumb-wrapper">
-        <div class="container">
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Project</li>
-                </ol>
-            </nav>
+        <div class="error-message" id="errorMessage">Incorrect password. Please try again.</div>
+        <div class="modal-buttons">
+            <button class="modal-btn modal-btn-cancel" id="cancelBtn">Cancel</button>
+            <button class="modal-btn modal-btn-submit" id="submitBtn">Submit</button>
         </div>
     </div>
 
-    <!-- Project Section Start -->
-    <section class="project-section fix section-padding">
+    <!-- Dashboard Content Section -->
+    <section class="dashboard-content">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/09.jpg" alt="img">
-                            <div class="project-content">
-                                <p>Solar</p>
-                                <h5><a href="#">Help Environment</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/10.jpg" alt="img">
-                            <div class="project-content">
-                                <p>GoSolar</p>
-                                <h5><a href="#">Change View</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/11.jpg" alt="img">
-                            <div class="project-content">
-                                <p>Charge</p>
-                                <h5><a href="#">Heal yourself</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/12.jpg" alt="img">
-                            <div class="project-content">
-                                <p>Solar</p>
-                                <h5><a href="#">Green Energy</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/13.jpg" alt="img">
-                            <div class="project-content">
-                                <p>GoSolar</p>
-                                <h5><a href="#">Perfect Shine</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/14.jpg" alt="img">
-                            <div class="project-content">
-                                <p>Charge</p>
-                                <h5><a href="#">Think smart</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/15.jpg" alt="img">
-                            <div class="project-content">
-                                <p>Solar</p>
-                                <h5><a href="#">Use solar</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/16.jpg" alt="img">
-                            <div class="project-content">
-                                <p>GoSolar</p>
-                                <h5><a href="#">Sustainable Peace</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <div class="project-box-items-2">
-                        <div class="project-image">
-                            <img src="assets/img/project/17.jpg" alt="img">
-                            <div class="project-content">
-                                <p>Panels</p>
-                                <h5><a href="#">Heal yourself</a></h5>
-                                <a href="#" class="icon-btn"><i class="fas fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Locked State -->
+            <div class="dashboard-locked" id="dashboardLocked">
+                <i class="fas fa-lock"></i>
+                <h2>Dashboard Locked</h2>
+                <p>This content is password protected.</p>
+            </div>
+
+            <!-- Unlocked State -->
+            <div class="dashboard-unlocked" id="dashboardUnlocked">
+                <div class="dashboard-welcome">
+                    <h1>dashboard</h1>
+                    <p>Welcome to the MN Enterprises Dashboard</p>
                 </div>
             </div>
         </div>
     </section>
-
-
-    <!-- Footer Contact Section Start -->
-    <div class="footer-contact-section remove-bg">
-        <div class="container">
-            <div class="footer-contact-wrapper">
-                <div class="contact-items wow fadeInUp" data-wow-delay=".3s">
-                    <div class="icon">
-                        <i class="far fa-map-marker-alt"></i>
-                    </div>
-                    <div class="content">
-                        <p>2416 Mapleview</p>
-                        <p>DriveTampa, FL 33634</p>
-                    </div>
-                </div>
-                <div class="contact-items wow fadeInUp" data-wow-delay=".5s">
-                    <div class="icon">
-                        <i class="fal fa-envelope-open-text"></i>
-                    </div>
-                    <div class="content">
-                        <p>Main Email : <a href="mailto:info@example.com" class="link">info@example.com</a></p>
-                        <p>ComInquiries : <a href="mailto:info@example.com" class="link">info@example.com</a></p>
-                    </div>
-                </div>
-                <div class="contact-items wow fadeInUp" data-wow-delay=".7s">
-                    <div class="icon">
-                        <i class="fal fa-phone"></i>
-                    </div>
-                    <div class="content">
-                        <p>Telephone : <a href="tel:0029129102320">0029129102320</a></p>
-                        <p>Mobile : <a href="tel:000232439493"> 000 2324 39493</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer Section Start -->
     <footer class="footer-section footer-bg">
@@ -671,7 +728,8 @@
             <div class="container">
                 <div class="footer-bottom-wrapper text-center">
                     <p class="wow fadeInUp" data-wow-delay=".3s">
-                        © <a href="index.html">MN Enterprises</a> 2025 | <span>All Rights</span> Reserved.
+                        © <span class="footer-m-trigger" id="footerMTrigger">M</span><a href="index.html">N
+                            Enterprises</a> 2025 | <span>All Rights</span> Reserved.
                     </p>
                 </div>
             </div>
@@ -702,6 +760,98 @@
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            const CORRECT_PASSWORD = 'MNENTERPRISES10K';
+
+            // Elements
+            const footerMTrigger = document.getElementById('footerMTrigger');
+            const passwordModal = document.getElementById('passwordModal');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const passwordInput = document.getElementById('dashboardPassword');
+            const togglePassword = document.getElementById('togglePassword');
+            const submitBtn = document.getElementById('submitBtn');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const errorMessage = document.getElementById('errorMessage');
+            const dashboardLocked = document.getElementById('dashboardLocked');
+            const dashboardUnlocked = document.getElementById('dashboardUnlocked');
+
+            // Open modal
+            function openModal() {
+                passwordModal.classList.add('active');
+                modalOverlay.classList.add('active');
+                passwordInput.value = '';
+                errorMessage.classList.remove('show');
+                passwordInput.focus();
+            }
+
+            // Close modal
+            function closeModal() {
+                passwordModal.classList.remove('active');
+                modalOverlay.classList.remove('active');
+                passwordInput.value = '';
+                errorMessage.classList.remove('show');
+            }
+
+            // Toggle password visibility
+            function togglePasswordVisibility() {
+                const type = passwordInput.type === 'password' ? 'text' : 'password';
+                passwordInput.type = type;
+                togglePassword.classList.toggle('fa-eye');
+                togglePassword.classList.toggle('fa-eye-slash');
+            }
+
+            // Verify password
+            function verifyPassword() {
+                const enteredPassword = passwordInput.value.trim();
+
+                if (enteredPassword === CORRECT_PASSWORD) {
+                    unlockDashboard();
+                    closeModal();
+                } else {
+                    errorMessage.classList.add('show');
+                    passwordInput.value = '';
+                    passwordInput.focus();
+
+                    // Shake the input
+                    passwordInput.style.animation = 'shake 0.5s ease';
+                    setTimeout(() => {
+                        passwordInput.style.animation = '';
+                    }, 500);
+                }
+            }
+
+            // Unlock dashboard
+            function unlockDashboard() {
+                dashboardLocked.style.display = 'none';
+                dashboardUnlocked.classList.add('active');
+            }
+
+            // Event Listeners
+            footerMTrigger.addEventListener('click', openModal);
+            modalOverlay.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+            togglePassword.addEventListener('click', togglePasswordVisibility);
+            submitBtn.addEventListener('click', verifyPassword);
+
+            // Enter key to submit
+            passwordInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    verifyPassword();
+                }
+            });
+
+            // Escape key to close
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && passwordModal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>

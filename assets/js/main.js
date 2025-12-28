@@ -3,10 +3,10 @@
     Version         : 1.0
 * ================================================================= */
 
-(function($) {
+(function ($) {
     "use strict";
 
-    $(document).ready( function() {
+    $(document).ready(function () {
 
         //>> Mobile Menu Js Start <<//
         $('#mobile-menu').meanmenu({
@@ -16,17 +16,17 @@
         });
 
         //>> Sidebar Toggle Js Start <<//
-        $(".offcanvas__close,.offcanvas__overlay").on("click", function() {
+        $(".offcanvas__close,.offcanvas__overlay").on("click", function () {
             $(".offcanvas__info").removeClass("info-open");
             $(".offcanvas__overlay").removeClass("overlay-open");
         });
-        $(".sidebar__toggle").on("click", function() {
+        $(".sidebar__toggle").on("click", function () {
             $(".offcanvas__info").addClass("info-open");
             $(".offcanvas__overlay").addClass("overlay-open");
         });
 
         //>> Body Overlay Js Start <<//
-        $(".body-overlay").on("click", function() {
+        $(".body-overlay").on("click", function () {
             $(".offcanvas__area").removeClass("offcanvas-opened");
             $(".df-search-area").removeClass("opened");;
             $(".body-overlay").removeClass("opened");
@@ -34,7 +34,7 @@
 
         //>> Sticky Header Js Start <<//
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 250) {
                 $("#header-sticky").addClass("sticky");
             } else {
@@ -43,22 +43,22 @@
         });
 
         //>> Hero-1 Slider Start <<//
-         const sliderActive2 = ".hero-slider";
-         const sliderInit2 = new Swiper(sliderActive2, {
-             loop: true,
-             slidesPerView: 1,
-             effect: "fade",
-             speed: 3000,
-             autoplay: {
-                 delay: 5000,
-                 disableOnInteraction: false,
-             },
-             navigation: {
-                 nextEl: ".array-prev",
-                 prevEl: ".array-next",
-             },
-         });
- 
+        const sliderActive2 = ".hero-slider";
+        const sliderInit2 = new Swiper(sliderActive2, {
+            loop: true,
+            slidesPerView: 1,
+            effect: "fade",
+            speed: 3000,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".array-prev",
+                prevEl: ".array-next",
+            },
+        });
+
         function animated_swiper(selector, init) {
             const animated = function animated() {
                 $(selector + " [data-animation]").each(function () {
@@ -90,7 +90,7 @@
 
         //>> Wow Animation Start <<//
         new WOW().init();
-       
+
 
         //>> Scroll Js Start <<//
         const scrollPath = document.querySelector(".scroll-up path");
@@ -101,7 +101,7 @@
         scrollPath.getBoundingClientRect();
         scrollPath.style.transition = scrollPath.style.WebkitTransition = "stroke-dashoffset 10ms linear";
 
-        const updatescroll = function() {
+        const updatescroll = function () {
             let scrolltotal = $(window).scrollTop();
             let height = $(document).height() - $(window).height();
             let scrolltotalheight = pathLength - (scrolltotal * pathLength) / height;
@@ -113,7 +113,7 @@
         const offset = 50;
         const duration = 950;
 
-        $(window).on("scroll", function() {
+        $(window).on("scroll", function () {
             if (jQuery(this).scrollTop() > offset) {
                 jQuery(".scroll-up").addClass("active-scroll");
             } else {
@@ -121,18 +121,18 @@
             }
         });
 
-        $(".scroll-up").on("click", function(event) {
+        $(".scroll-up").on("click", function (event) {
             event.preventDefault();
             jQuery("html, body").animate({
-                    scrollTop: 0,
-                },
+                scrollTop: 0,
+            },
                 duration
             );
             return false;
         });
 
-         //>> Video Popup Start <<//
-         $(".img-popup").magnificPopup({
+        //>> Video Popup Start <<//
+        $(".img-popup").magnificPopup({
             type: "image",
             gallery: {
                 enabled: true,
@@ -144,7 +144,7 @@
             callbacks: {
             }
         });
-        
+
         //>> Counterup Start <<//
         $(".count").counterUp({
             delay: 15,
@@ -158,7 +158,7 @@
         $('select').niceSelect();
 
         //>> Team Slider Start <<//
-        if($('.team-slider').length > 0) {
+        if ($('.team-slider').length > 0) {
             const teamSlider = new Swiper(".team-slider", {
                 spaceBetween: 30,
                 speed: 3000,
@@ -193,7 +193,7 @@
         }
 
         //>> Testimonial Slider Start <<//
-        if($('.testimonial-slider').length > 0) {
+        if ($('.testimonial-slider').length > 0) {
             const testimonialSlider = new Swiper(".testimonial-slider", {
                 spaceBetween: 30,
                 speed: 2000,
@@ -227,7 +227,7 @@
         }
 
         //>> News Slider Start <<//
-        if($('.news-slider').length > 0) {
+        if ($('.news-slider').length > 0) {
             const newsSlider = new Swiper(".news-slider", {
                 spaceBetween: 30,
                 speed: 2000,
@@ -262,7 +262,7 @@
         }
 
         //>> Brand Slider Start <<//
-        if($('.brand-slider').length > 0) {
+        if ($('.brand-slider').length > 0) {
             const brandSlider = new Swiper(".brand-slider", {
                 spaceBetween: 30,
                 speed: 2000,
@@ -297,7 +297,7 @@
         }
 
         //>> News Slider Start <<//
-        if($('.service-slider').length > 0) {
+        if ($('.service-slider').length > 0) {
             const serviceSlider = new Swiper(".service-slider", {
                 spaceBetween: 30,
                 speed: 2000,
@@ -360,15 +360,15 @@
             e.stopPropagation();
         });
 
-         //>> Mouse Cursor Start <<//
-         function mousecursor() {
+        //>> Mouse Cursor Start <<//
+        function mousecursor() {
             if ($("body")) {
                 const e = document.querySelector(".cursor-inner"),
                     t = document.querySelector(".cursor-outer");
                 let n,
                     i = 0,
                     o = !1;
-                (window.onmousemove = function(s) {
+                (window.onmousemove = function (s) {
                     o ||
                         (t.style.transform =
                             "translate(" + s.clientX + "px, " + s.clientY + "px)"),
@@ -377,29 +377,29 @@
                         (n = s.clientY),
                         (i = s.clientX);
                 }),
-                $("body").on("mouseenter", "a, .cursor-pointer", function() {
+                    $("body").on("mouseenter", "a, .cursor-pointer", function () {
                         e.classList.add("cursor-hover"), t.classList.add("cursor-hover");
                     }),
-                    $("body").on("mouseleave", "a, .cursor-pointer", function() {
+                    $("body").on("mouseleave", "a, .cursor-pointer", function () {
                         ($(this).is("a") && $(this).closest(".cursor-pointer").length) ||
-                        (e.classList.remove("cursor-hover"),
-                            t.classList.remove("cursor-hover"));
+                            (e.classList.remove("cursor-hover"),
+                                t.classList.remove("cursor-hover"));
                     }),
                     (e.style.visibility = "visible"),
                     (t.style.visibility = "visible");
             }
         }
-        $(function() {
+        $(function () {
             mousecursor();
         });
 
-      // circle-progress
-      $(".circle-bar").loading();
+        // circle-progress
+        $(".circle-bar").loading();
 
 
     }); // End Document Ready Function
 
-    $.fn.loading = function() {
+    $.fn.loading = function () {
         const DEFAULTS = {
             backgroundColor: '#b3cef6',
             progressColor: '#4b86db',
@@ -407,7 +407,7 @@
             duration: 2000
         };
 
-        $(this).each(function() {
+        $(this).each(function () {
             const $target = $(this);
 
             const opts = {
@@ -426,7 +426,7 @@
             $target.find('.right').css('background-color', opts.progressColor);
 
             const $rotate = $target.find('.rotate');
-            setTimeout(function() {
+            setTimeout(function () {
                 $rotate.css({
                     'transition': 'transform ' + opts.duration + 'ms linear',
                     'transform': 'rotate(' + opts.percent * 3.6 + 'deg)'
@@ -449,7 +449,7 @@
     }
 
     function loader() {
-        $(window).on('load', function() {
+        $(window).on('load', function () {
             // Animate loader off screen
             $(".preloader").addClass('loaded');
             $(".preloader").delay(600).fadeOut();
@@ -457,6 +457,6 @@
     }
     loader();
 
-    
+
 })(jQuery); // End jQuery
 

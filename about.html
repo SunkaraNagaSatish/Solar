@@ -34,6 +34,12 @@
     <link rel="stylesheet" href="style.css">
     <!--<< Custom Navbar CSS >>-->
     <link rel="stylesheet" href="assets/css/custom-navbar.css">
+    <!--<< Footer Custom CSS >>-->
+    <link rel="stylesheet" href="assets/css/footer-custom.css">
+    <!--<< Journey Modal CSS >>-->
+    <link rel="stylesheet" href="assets/css/journey-modal.css">
+    <!--<< Journey Section CSS >>-->
+    <link rel="stylesheet" href="assets/css/journey-section.css">
 </head>
 
 <body>
@@ -318,28 +324,16 @@
                                                 <i class="fas fa-angle-down"></i>
                                             </a>
                                             <ul class="submenu">
-                                                <li class="has-dropdown">
-                                                    <a href="project-details.html">
-                                                        Project
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="project.html">Project</a></li>
-                                                        <li><a href="project-details.html">Project Details</a></li>
-                                                    </ul>
+                                                <li>
+                                                    <a href="project.html">Project</a>
                                                 </li>
-                                                <li class="has-dropdown">
-                                                    <a href="team-details.html">
-                                                        Team
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="team.html">Our Team</a></li>
-                                                        <li><a href="team-details.html">Team Details</a></li>
-                                                    </ul>
+                                                <li>
+                                                    <a href="team.html">Team</a>
                                                 </li>
-                                                <li><a href="faq.html">Faq's</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
+                                                <li>
+                                                    <a href="dashboard.html">Dashboard</a>
+                                                </li>
+
                                             </ul>
                                         </li>
                                         <li>
@@ -349,7 +343,7 @@
                                             </a>
                                             <ul class="submenu">
                                                 <li><a href="news.html">Blog</a></li>
-                                                <li><a href="news-details.html">Blog Details</a></li>
+
                                             </ul>
                                         </li>
                                         <li>
@@ -364,7 +358,7 @@
                         <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a>
                         <div class="header-button">
                             <a href="contact.html" class="theme-btn">
-                                Get a quote <i class="far fa-long-arrow-right"></i>
+                                Get a quote <i class="fas fa-arrow-right-long"></i>
                             </a>
                         </div>
                         <div class="header__hamburger d-xl-none my-auto">
@@ -413,7 +407,7 @@
     </div>
 
     <!-- About Section Start -->
-    <section class="about-section fix section-padding">
+    <section class="about-section fix section-padding" style="padding-bottom: 0;">
         <div class="container">
             <div class="about-wrapper-2">
                 <div class="row g-4">
@@ -428,8 +422,8 @@
                                     <img src="assets/img/about/icon/03.svg" alt="img">
                                 </div>
                                 <h5>
-                                    Innovative Ways To <br>
-                                    Harness Nature <br> Renewable
+                                    Illuminating Anantapur's <br>
+                                    Path to Energy <br> Independence
                                 </h5>
                             </div>
                         </div>
@@ -458,15 +452,15 @@
                                 <ul class="wow fadeInUp" data-wow-delay=".5s">
                                     <li>
                                         <i class="fas fa-check-circle"></i>
-                                        Digits that define growth
+                                        Founded in 2023 (by technocrats with 3+ years prior experience)
                                     </li>
                                     <li>
                                         <i class="fas fa-check-circle"></i>
-                                        Our preparation is your profit
+                                        Solar Energy Solutions + Power Management + Security Systems
                                     </li>
                                     <li>
                                         <i class="fas fa-check-circle"></i>
-                                        Edge out the competition
+                                        10,000+ installations across Andhra Pradesh
                                     </li>
                                 </ul>
                             </div>
@@ -496,7 +490,7 @@
             <div class="faq-wrapper">
                 <div class="row g-4">
                     <div class="col-lg-6">
-                        <div class="faq-content style-2">
+                        <div class="faq-content style-2" style="margin-top: -50px;">
                             <div class="section-title">
                                 <span class="wow fadeInUp">Some FAQ’s</span>
                                 <h2 class="wow fadeInUp" data-wow-delay=".3s">Let the sunshine inside your house</h2>
@@ -507,15 +501,21 @@
                                         <h4 class="accordion-header">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#faq2" aria-expanded="true" aria-controls="faq2">
-                                                Connecting customers to your brand
+                                                How does MN Enterprises convert local power challenges into a
+                                                lasting<br> competitive advantage?
                                             </button>
                                         </h4>
-                                        <div id="faq2" class="accordion-collapse collapse show"
-                                            data-bs-parent="#accordion">
+                                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                             <div class="accordion-body">
-                                                There are many variations of passages of Lorem Ipsum available, but the
-                                                majority have suffered alteration in some form, by injected humour, or
-                                                randomised words which don't look even slightly believable.
+                                                By deeply understanding Anantapur’s grid behavior climate stress and
+                                                usage patterns
+                                                MN Enterprises designs systems that prevent losses before they occur
+                                                Integrated solar power management and security reduce downtime and risk
+                                                together
+                                                Strong after sales support converts installations into long term energy
+                                                partnerships
+                                                This local intelligence creates trust durability and ROI beyond just
+                                                selling equipment
                                             </div>
                                         </div>
                                     </div>
@@ -524,14 +524,20 @@
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false"
                                                 aria-controls="faq1">
-                                                Digital marketing made simple
+                                                What makes the MN Enterprises team a system of reliability rather than
+                                                just a group of technicians?
                                             </button>
                                         </h4>
                                         <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                             <div class="accordion-body">
-                                                There are many variations of passages of Lorem Ipsum available, but the
-                                                majority have suffered alteration in some form, by injected humour, or
-                                                randomised words which don't look even slightly believable.
+                                                The MN Enterprises team functions as a system of reliability because its
+                                                engineers and experts share deep technical knowledge and real world
+                                                understanding of local power conditions. Leadership by experienced
+                                                technocrats ensures that every decision is practical data driven and
+                                                field tested. This collective ownership of outcomes builds
+                                                accountability and consistency across projects. By combining skills in
+                                                solar energy power management and security the team delivers integrated
+                                                solutions that perform reliably over the long term.
                                             </div>
                                         </div>
                                     </div>
@@ -540,14 +546,19 @@
                                             <button class="accordion-button collapsed" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
                                                 aria-controls="faq3">
-                                                Be where the world is going
+                                                How does leadership at MN Enterprises translate vision into measurable
+                                                reliability on the ground?
                                             </button>
                                         </h4>
                                         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                             <div class="accordion-body">
-                                                There are many variations of passages of Lorem Ipsum available, but the
-                                                majority have suffered alteration in some form, by injected humour, or
-                                                randomised words which don't look even slightly believable.
+                                                Leadership at MN Enterprises blends sustainable energy vision with hands
+                                                on technical authority. Qualified engineers guide decisions using
+                                                electrical and electronics expertise rather than assumptions. Service
+                                                managers ensure accountability by linking performance directly to
+                                                customer satisfaction. Technical designers optimize each installation
+                                                for real conditions not templates. This leadership structure turns
+                                                intent into consistent execution and long term trust.
                                             </div>
                                         </div>
                                     </div>
@@ -556,7 +567,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="faq-image-2">
+                        <div class="faq-image-2" style="margin-top: 164px;">
                             <img src="assets/img/faq-2.jpg" alt="faq-img">
                         </div>
                     </div>
@@ -572,64 +583,68 @@
         </div>
         <div class="container">
             <div class="section-title text-center">
-                <span class="wow fadeInUp">work process</span>
+                <span class="wow fadeInUp">Our Journey</span>
                 <h2 class="wow fadeInUp" data-wow-delay=".3s">Think beyond the wave</h2>
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div class="work-process-box-items">
-                        <div class="post-cat">STEP 01</div>
+                        <div class="post-cat">Priority 1</div>
                         <div class="icon-items">
                             <div class="icon">
-                                <img src="assets/img/process/01.svg" alt="img">
+                                <i class="fas fa-book-open" style="font-size: 50px; color: var(--theme);"></i>
                             </div>
-                            <h5>Data-driven digital marketing</h5>
+                            <h5>Our Story</h5>
                         </div>
-                        <p>Web designing in a powerful way of just not an only professions, however, in a passion for
-                            our</p>
-                        <a href="about.html" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a>
+                        <p>Founded by a group of experienced technocrats with over 3 years of expertise in system
+                            integration and solar projects across Andhra Pradesh</p>
+                        <a href="#" class="theme-btn journey-read-more" data-step="story">Read More <i
+                                class="fas fa-arrow-right-long"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                     <div class="work-process-box-items">
-                        <div class="post-cat">STEP 02</div>
+                        <div class="post-cat">Priority 2</div>
                         <div class="icon-items">
                             <div class="icon">
-                                <img src="assets/img/process/02.svg" alt="img">
+                                <i class="fas fa-eye" style="font-size: 50px; color: var(--theme);"></i>
                             </div>
-                            <h5>Better ideas for fast growth</h5>
+                            <h5>Our Vision</h5>
                         </div>
-                        <p>Web designing in a powerful way of just not an only professions, however, in a passion for
-                            our</p>
-                        <a href="about.html" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a>
+                        <p>By making the switch to solar an easy, affordable, and rewarding experience, we are
+                            accomplishing our vision every day.</p>
+                        <a href="#" class="theme-btn journey-read-more" data-step="vision">Read More <i
+                                class="fas fa-arrow-right-long"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                     <div class="work-process-box-items">
-                        <div class="post-cat">STEP 03</div>
+                        <div class="post-cat">Priority 3</div>
                         <div class="icon-items">
                             <div class="icon">
-                                <img src="assets/img/process/03.svg" alt="img">
+                                <i class="fas fa-handshake" style="font-size: 50px; color: var(--theme);"></i>
                             </div>
-                            <h5>Make better ideas happen fast</h5>
+                            <h5>Our Commitment </h5>
                         </div>
-                        <p>Web designing in a powerful way of just not an only professions, however, in a passion for
-                            our</p>
-                        <a href="about.html" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a>
+                        <p>Every installation we complete is a testament to our engineering prowess and commitment to
+                            quality.</p>
+                        <a href="#" class="theme-btn journey-read-more" data-step="commitment">Read More <i
+                                class="fas fa-arrow-right-long"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                     <div class="work-process-box-items">
-                        <div class="post-cat">STEP 04</div>
+                        <div class="post-cat">Priority 4</div>
                         <div class="icon-items">
                             <div class="icon">
-                                <img src="assets/img/process/04.svg" alt="img">
+                                <i class="fas fa-award" style="font-size: 50px; color: var(--theme);"></i>
                             </div>
-                            <h5>The growth accelerator</h5>
+                            <h5>Our Promise</h5>
                         </div>
-                        <p>Web designing in a powerful way of just not an only professions, however, in a passion for
-                            our</p>
-                        <a href="about.html" class="theme-btn">Read More <i class="far fa-long-arrow-right"></i></a>
+                        <p>MN Enterprises is more than just a solar and power solutions provider. We are a local success
+                            story, illuminating the path to a greener, more secure</p>
+                        <a href="#" class="theme-btn journey-read-more" data-step="promise">Read More <i
+                                class="fas fa-arrow-right-long"></i></a>
                     </div>
                 </div>
             </div>
@@ -648,7 +663,8 @@
                 </div>
                 <div class="cta-contact-left">
                     <div class="section-title">
-                        <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">We made passion <br> our raw material
+                        <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">Join Us in Powering <br>a Sustainable
+                            Development
                         </h2>
                     </div>
                     <div class="icon-items mt-4 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
@@ -657,7 +673,7 @@
                         </a>
                         <div class="content">
                             <p>Call us now</p>
-                            <h5><a href="tel:+447700900217">+44 7700 900217</a></h5>
+                            <h5><a href="tel:+919010100175">+91 9010100175</a></h5>
                         </div>
                     </div>
                 </div>
@@ -666,174 +682,117 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- About Company Section Start -->
-    <section class="about-company-section fix section-padding">
-        <div class="container">
-            <div class="section-title text-center">
-                <span class="wow fadeInUp">About Our Company</span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">Create and convert</h2>
-            </div>
-            <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="about-card-items">
-                        <div class="icon">
-                            <img src="assets/img/about/icon/04.svg" alt="img">
-                        </div>
-                        <div class="content">
-                            <h2><span class="count">1400</span></h2>
-                            <p>Best Adviser</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="about-card-items">
-                        <div class="icon">
-                            <img src="assets/img/about/icon/05.svg" alt="img">
-                        </div>
-                        <div class="content">
-                            <h2><span class="count">2800</span></h2>
-                            <p>Clients</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="about-card-items">
-                        <div class="icon">
-                            <img src="assets/img/about/icon/06.svg" alt="img">
-                        </div>
-                        <div class="content">
-                            <h2><span class="count">800</span></h2>
-                            <p>Employees</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                    <div class="about-card-items">
-                        <div class="icon">
-                            <img src="assets/img/about/icon/07.svg" alt="img">
-                        </div>
-                        <div class="content">
-                            <h2><span class="count">1900</span></h2>
-                            <p>Satisfaction</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Contact Section Start -->
-    <div class="footer-contact-section remove-bg">
-        <div class="container">
-            <div class="footer-contact-wrapper">
-                <div class="contact-items wow fadeInUp" data-wow-delay=".3s">
-                    <div class="icon">
-                        <i class="far fa-map-marker-alt"></i>
-                    </div>
-                    <div class="content">
-                        <p>2416 Mapleview</p>
-                        <p>DriveTampa, FL 33634</p>
-                    </div>
-                </div>
-                <div class="contact-items wow fadeInUp" data-wow-delay=".5s">
-                    <div class="icon">
-                        <i class="fal fa-envelope-open-text"></i>
-                    </div>
-                    <div class="content">
-                        <p>Main Email : <a href="mailto:info@example.com" class="link">info@example.com</a></p>
-                        <p>ComInquiries : <a href="mailto:info@example.com" class="link">info@example.com</a></p>
-                    </div>
-                </div>
-                <div class="contact-items wow fadeInUp" data-wow-delay=".7s">
-                    <div class="icon">
-                        <i class="fal fa-phone"></i>
-                    </div>
-                    <div class="content">
-                        <p>Telephone : <a href="tel:0029129102320">0029129102320</a></p>
-                        <p>Mobile : <a href="tel:000232439493"> 000 2324 39493</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section><br>
 
     <!-- Footer Section Start -->
     <footer class="footer-section footer-bg">
         <div class="container">
             <div class="footer-widgets-wrapper">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6  wow fadeInUp" data-wow-delay=".2s">
+                    <!-- Column 1: About Company -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                         <div class="single-footer-widget">
                             <div class="widget-head">
                                 <a href="index.html">
-                                    <img src="assets/img/logo/footer-logo.svg" alt="logo-img">
+                                    <img src="assets/img/logo/MN LOGO.svg" alt="MN Enterprises Logo"
+                                        style="width: 120px; height: auto;">
                                 </a>
                             </div>
                             <div class="footer-content">
+                                <h4 class="text-white mb-3">MN Enterprises</h4>
                                 <p>
-                                    To deliver solar energy solutions that are competitively priced and meet worldwide
-                                    quality requirements, as well as to create new goods using edge technology.
+                                    Based in Anantapur, MN Enterprises is your trusted partner for solar energy
+                                    solutions, power backup systems, and complete energy independence. A reliable power
+                                    to homes and businesses across Andhra Pradesh.
                                 </p>
-                                <div class="social-icon d-flex align-items-center">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-vimeo-v"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-5  wow fadeInUp" data-wow-delay=".4s">
-                        <div class="single-footer-widget">
-                            <div class="widget-head">
-                                <h4 class="text-white">Our Company</h4>
-                            </div>
-                            <ul class="list-area">
-                                <li><a href="service.html">Credit industrys</a></li>
-                                <li><a href="service.html">Credit Consulting</a></li>
-                                <li><a href="service.html">Business Credit industry</a></li>
-                                <li><a href="service.html">Finance industry</a></li>
-                                <li><a href="service.html">Smart Thinking</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-5  wow fadeInUp" data-wow-delay=".6s">
+
+                    <!-- Column 2: Essential Links -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 ps-lg-4 wow fadeInUp" data-wow-delay=".4s">
                         <div class="single-footer-widget">
                             <div class="widget-head">
                                 <h4 class="text-white">Essential Links</h4>
                             </div>
                             <ul class="list-area">
-                                <li><a href="service.html">Services</a></li>
+                                <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
+                                <li><a href="service.html">Our Services</a></li>
                                 <li><a href="team.html">Our Team</a></li>
                                 <li><a href="news.html">Blog</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-3  wow fadeInUp" data-wow-delay=".8s">
+
+                    <!-- Column 3: Contact Info -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 ps-lg-4 wow fadeInUp" data-wow-delay=".6s">
                         <div class="single-footer-widget">
                             <div class="widget-head">
-                                <h4 class="text-white">Recent Blog</h4>
+                                <h4 class="text-white">Get in Touch</h4>
                             </div>
-                            <div class="popularspost-area">
-                                <div class="single-post-items">
-                                    <div class="post-img bg-cover"
-                                        style="background-image: url('assets/img/footer/post1.jpg');"></div>
-                                    <div class="post-content">
-                                        <span><i class="fal fa-calendar-alt"></i>24th November 2024</span>
-                                        <h5><a href="news-details.html">Brilliant minds working on brilliant </a></h5>
-                                    </div>
+                            <div class="footer-content">
+                                <ul class="contact-info">
+                                    <li>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <p>
+                                            <strong>Address:</strong><br>
+                                            D.No: 6-71, Near ACB Office,<br>
+                                            TV Tower, Lenin Nagar,<br>
+                                            Anantapur - 515001, AP
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-phone"></i>
+                                        <p>
+                                            <strong>Help Desk:</strong><br>
+                                            <a href="tel:+919010100175">+91 9010100175</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <p>
+                                            <strong>Email:</strong><br>
+                                            <a href="mailto:mnenterprises.atp@gmail.com">mnenterprises.atp@gmail.com</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 4: Follow Us -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 ps-lg-4 wow fadeInUp" data-wow-delay=".8s">
+                        <div class="single-footer-widget">
+                            <div class="widget-head">
+                                <h4 class="text-white">Stay Connected</h4>
+                            </div>
+                            <div class="footer-content">
+                                <div class="social-icon d-flex align-items-center mb-4">
+                                    <a href="https://www.facebook.com/share/1CZJM6XeSp/?mibextid=wwXIfr" target="_blank"
+                                        title="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/mnenterprises2025?igsh=emt5NjBpZmJvOXR6&utm_source=qr"
+                                        target="_blank" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="https://wa.me/919010100175" target="_blank" title="WhatsApp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
                                 </div>
-                                <div class="single-post-items">
-                                    <div class="post-img bg-cover"
-                                        style="background-image: url('assets/img/footer/post2.jpg');"></div>
-                                    <div class="post-content">
-                                        <span><i class="fal fa-calendar-alt"></i>24th November 2024</span>
-                                        <h5><a href="news-details.html">Giving you the tech with endless </a></h5>
-                                    </div>
+                                <div class="newsletter-section">
+                                    <h5 class="text-white mb-2">Newsletter</h5>
+                                    <p class="mb-3">Get updates on solar schemes, energy tips, and exclusive offers.</p>
+                                    <form action="#" method="post" class="newsletter-form">
+                                        <div class="input-group">
+                                            <input type="email" class="form-control" placeholder="Your email" required>
+                                            <button type="submit" class="theme-btn">
+                                                <i class="fa-solid fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -843,28 +802,25 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <div class="footer-bottom-wrapper d-flex align-items-center justify-content-between">
-                    <p class="wow fadeInLeft" data-wow-delay=".3s">
-                        © <a href="index.html">ModinaTheme</a> 2024 | <span>All Rights</span> Reserved.
+                <div class="footer-bottom-wrapper text-center">
+                    <p class="wow fadeInUp" data-wow-delay=".3s">
+                        © <a href="index.html">MN Enterprises</a> 2025 | <span>All Rights</span> Reserved.
                     </p>
-                    <ul class="footer-menu wow fadeInRight" data-wow-delay=".5s">
-                        <li>
-                            <a href="contact.html">Terms</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Privacy & Policy</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Join Us</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Need Help ?</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Journey Popup Modal -->
+    <div id="journeyModal" class="journey-modal">
+        <div class="journey-modal-overlay"></div>
+        <div class="journey-modal-content">
+            <button class="journey-modal-close"><i class="fas fa-times"></i></button>
+            <div class="journey-modal-body">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
 
     <!--<< All JS Plugins >>-->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -890,6 +846,8 @@
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+    <!-- Journey Modal Script -->
+    <script src="assets/js/journey-modal.js"></script>
 </body>
 
 </html>

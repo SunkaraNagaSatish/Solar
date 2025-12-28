@@ -9,8 +9,8 @@
 /* Add rounded corners to the navbar - for header-1 */
 .header-1 {
     border-radius: 15px;
-    overflow: hidden;
-    /* Ensures content respects border radius */
+    overflow: visible;
+    /* Allow dropdowns to show */
     margin: 10px 0;
     /* Add some margin for visual spacing */
 }
