@@ -113,7 +113,7 @@
             border: 2px solid #444;
             border-radius: 8px;
             background: #1a1a1a;
-            color: #fff;
+            color: #fff !important;
             font-size: 16px;
             transition: all 0.3s ease;
         }
@@ -271,6 +271,370 @@
             display: inline-block;
             position: relative;
             color: inherit !important;
+        }
+
+        /* ============================================
+           Service Report Form Styles
+           ============================================ */
+        .service-report-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .report-form {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Arial', sans-serif;
+            font-size: 12px;
+            background: #fff;
+            border: 2px solid #000;
+        }
+
+        .report-form th,
+        .report-form td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        .report-form th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .report-form input[type="text"],
+        .report-form input[type="number"],
+        .report-form input[type="date"],
+        .report-form textarea {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 12px;
+            font-family: 'Arial', sans-serif;
+            padding: 2px 4px;
+            box-sizing: border-box;
+            outline: none;
+            color: #000 !important;
+        }
+
+        .report-form input:focus,
+        .report-form textarea:focus {
+            background: #fffbdd;
+        }
+
+        .report-form textarea {
+            resize: vertical;
+            min-height: 60px;
+            color: #000 !important;
+        }
+
+        .report-form .header-cell {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .report-form .company-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .report-form .company-address {
+            font-size: 11px;
+            margin: 5px 0;
+        }
+
+        .report-form .company-contact {
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .report-form .logo-cell {
+            width: 100px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .report-form .logo-cell img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        .report-form .gstin-row td {
+            font-weight: bold;
+            background: #f9f9f9;
+        }
+
+        .report-form .section-header {
+            background: #e8e8e8;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .report-form .label-cell {
+            font-weight: bold;
+            white-space: nowrap;
+            width: 1%;
+        }
+
+        .report-form .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .report-form .checkbox-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .report-form .checkbox-cell {
+            text-align: center;
+            width: 50px;
+        }
+
+        .report-form .highlight-yellow {
+            background-color: #ffff00;
+        }
+
+        .report-form .highlight-green {
+            background-color: #90ee90;
+        }
+
+        .report-form .param-section th {
+            text-align: center;
+            font-weight: bold;
+            background: #e8e8e8;
+        }
+
+        .report-form .param-label {
+            width: 60px;
+        }
+
+        .report-form .param-value {
+            width: 80px;
+        }
+
+        .report-form .signature-cell {
+            height: 60px;
+            vertical-align: top;
+        }
+
+        .report-form .full-width {
+            width: 100%;
+        }
+
+        /* Serial Numbers Table Styles */
+        .serial-form {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Arial', sans-serif;
+            font-size: 12px;
+            background: #fff;
+            border: 2px solid #000;
+        }
+
+        .serial-form th,
+        .serial-form td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        .serial-form input[type="text"] {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 12px;
+            font-family: 'Arial', sans-serif;
+            padding: 2px 4px;
+            box-sizing: border-box;
+            outline: none;
+            color: #000 !important;
+        }
+
+        .serial-form input:focus {
+            background: #fffbdd;
+        }
+
+        .serial-form textarea,
+        .serial-form input[type="date"] {
+            color: #000 !important;
+        }
+
+        .serial-form .section-header {
+            background: #e8e8e8;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .serial-form .label-cell {
+            font-weight: bold;
+            width: 120px;
+        }
+
+        .serial-form .empty-row td {
+            height: 25px;
+        }
+
+        .serial-form .signature-cell {
+            height: 50px;
+            vertical-align: top;
+        }
+
+        /* Print Styles */
+        @media print {
+
+            /* Hide all website elements */
+            .preloader,
+            .mouse-cursor,
+            .scroll-up,
+            .fix-area,
+            .offcanvas__overlay,
+            .header-section-2,
+            .search-wrap,
+            .modal-overlay,
+            .dashboard-password-modal,
+            .dashboard-locked,
+            .dashboard-welcome,
+            .form-actions,
+            .form-divider,
+            .footer-section,
+            #header-sticky {
+                display: none !important;
+            }
+
+            /* Reset dashboard content for print */
+            .dashboard-content {
+                padding: 0 !important;
+                min-height: auto !important;
+            }
+
+            .dashboard-unlocked {
+                display: block !important;
+                padding: 0 !important;
+            }
+
+            .service-report-container {
+                box-shadow: none !important;
+                padding: 10px !important;
+                margin-bottom: 20px !important;
+                page-break-after: always;
+            }
+
+            .service-report-container:last-of-type {
+                page-break-after: auto;
+            }
+
+            .report-form,
+            .serial-form {
+                page-break-inside: avoid;
+            }
+
+            body {
+                background: #fff !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+        }
+
+        /* Form action buttons */
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-actions .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-actions .btn-print {
+            background: linear-gradient(135deg, #6b8e23 0%, #556b2f 100%);
+            color: #fff;
+        }
+
+        .form-actions .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 142, 35, 0.4);
+        }
+
+        .form-actions .btn-clear {
+            background: #dc3545;
+            color: #fff;
+        }
+
+        .form-actions .btn-clear:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+
+        .form-actions .btn-save {
+            background: #28a745;
+            color: #fff;
+        }
+
+        .form-actions .btn-save:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .service-report-container {
+                padding: 15px;
+                overflow-x: auto;
+            }
+
+            .report-form,
+            .serial-form {
+                min-width: 800px;
+            }
+        }
+
+        /* Form divider */
+        .form-divider {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .form-divider::before,
+        .form-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #6b8e23, transparent);
+        }
+
+        .form-divider span {
+            padding: 0 20px;
+            color: #6b8e23;
+            font-weight: bold;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -601,8 +965,520 @@
             <!-- Unlocked State -->
             <div class="dashboard-unlocked" id="dashboardUnlocked">
                 <div class="dashboard-welcome">
-                    <h1>dashboard</h1>
-                    <p>Welcome to the MN Enterprises Dashboard</p>
+                    <h1>Service Report Dashboard</h1>
+                    <p>Welcome to the MN Enterprises Service Report Management System</p>
+                </div>
+
+                <!-- ============================================
+                     FORM 1: Installation/Service Report
+                     ============================================ -->
+                <div class="service-report-container">
+                    <table class="report-form" id="serviceReportForm">
+                        <!-- Header Row with Logo and Company Info -->
+                        <tr>
+                            <td class="logo-cell" rowspan="2">
+                                <img src="assets/img/logo/MN LOGO.svg" alt="MN Enterprises Logo">
+                            </td>
+                            <td class="header-cell" colspan="7">
+                                <h1 class="company-name">MN ENTERPRISES</h1>
+                                <p class="company-address">D.No:- 6-71, Near ACB Office, TV TOWER, Lenin Nagar,
+                                    Anantapur, Andhra Pradesh, 515002</p>
+                                <p class="company-contact">Mobile: 8688595988, 9676468976 | Email:
+                                    mnenterprises.atp@gmail.com</p>
+                            </td>
+                        </tr>
+                        <tr class="gstin-row">
+                            <td colspan="7"><strong>GSTIN: 37EQRPM1634M1Z5</strong></td>
+                        </tr>
+
+                        <!-- Report Type Row -->
+                        <tr>
+                            <td class="section-header" colspan="4">INSTALLATION REPORT</td>
+                            <td class="section-header" colspan="2">SERVICE REPORT</td>
+                            <td class="label-cell">No: MNE:</td>
+                            <td><input type="text" id="mneNo" placeholder="1"></td>
+                        </tr>
+
+                        <!-- Customer & Installation Address -->
+                        <tr>
+                            <td class="label-cell" colspan="2">CUSTOMER ADDRESS:</td>
+                            <td colspan="2"><input type="text" id="customerAddress"
+                                    placeholder="Enter customer address"></td>
+                            <td class="label-cell" colspan="2">INSTALLATION SITE ADDRESS:</td>
+                            <td colspan="2"><input type="text" id="installationAddress"
+                                    placeholder="Enter installation address"></td>
+                        </tr>
+
+                        <!-- Contact Person Row -->
+                        <tr>
+                            <td class="label-cell">Contact person:</td>
+                            <td colspan="2"><input type="text" id="contactPerson1" placeholder="Enter name"></td>
+                            <td></td>
+                            <td class="label-cell">Contact person:</td>
+                            <td colspan="3"><input type="text" id="contactPerson2" placeholder="Enter name"></td>
+                        </tr>
+
+                        <!-- Contact No Row -->
+                        <tr>
+                            <td class="label-cell">Contact No:</td>
+                            <td colspan="2"><input type="text" id="contactNo1" placeholder="Enter number"></td>
+                            <td></td>
+                            <td class="label-cell">Contact No:</td>
+                            <td colspan="3"><input type="text" id="contactNo2" placeholder="Enter number"></td>
+                        </tr>
+
+                        <!-- Customer Status Row -->
+                        <tr>
+                            <td colspan="4">
+                                <strong>CUSTOMER STATUS:</strong>
+                                <label style="margin-left:10px;"><input type="checkbox" id="underWarranty"> Under
+                                    Warranty</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="amc"> AMC</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="chargable">
+                                    Chargable</label>
+                            </td>
+                            <td class="label-cell">UNIT SL No:</td>
+                            <td colspan="3"><input type="text" id="unitSlNo" placeholder="Enter unit SL no"></td>
+                        </tr>
+
+                        <!-- Call Attended/Completed Date Row -->
+                        <tr>
+                            <td class="label-cell">CALL ATTENDED DATE:</td>
+                            <td><input type="date" id="callAttendedDate"></td>
+                            <td class="label-cell">TIME:</td>
+                            <td><input type="text" id="callAttendedTime" placeholder="HH:MM"></td>
+                            <td class="label-cell">CALL COMPLETED DATE:</td>
+                            <td><input type="date" id="callCompletedDate"></td>
+                            <td class="label-cell">TIME:</td>
+                            <td><input type="text" id="callCompletedTime" placeholder="HH:MM"></td>
+                        </tr>
+
+                        <!-- Date of Delivery/Installation Row -->
+                        <tr>
+                            <td class="label-cell" colspan="2">DATE OF DELIVERY:</td>
+                            <td colspan="2"><input type="date" id="dateOfDelivery"></td>
+                            <td class="label-cell" colspan="2">DATE OF INSTALLATION:</td>
+                            <td><input type="date" id="dateOfInstallation"></td>
+                            <td class="label-cell">WARRANTY PERIOD:</td>
+                        </tr>
+
+                        <!-- Warranty Dates Row -->
+                        <tr>
+                            <td class="label-cell" colspan="2">DATE OF WARRANTY STARTING:</td>
+                            <td colspan="2"><input type="date" id="warrantyStartDate"></td>
+                            <td class="label-cell" colspan="2">DATE OF WARRANTY EXPIR:</td>
+                            <td colspan="2"><input type="date" id="warrantyExpiryDate"></td>
+                        </tr>
+
+                        <!-- Description Header Row -->
+                        <tr>
+                            <td class="label-cell">DESCRIPTION</td>
+                            <td class="label-cell">RATING</td>
+                            <td class="label-cell">QTY</td>
+                            <td class="label-cell">MAKE/MODEL</td>
+                            <td class="section-header" colspan="4">OTHER DETAILS</td>
+                        </tr>
+
+                        <!-- ONGRID/SHU/PCU Row -->
+                        <tr>
+                            <td><input type="text" id="desc1" value="ONGRID/SHU/PCU"></td>
+                            <td><input type="text" id="rating1" placeholder="Rating"></td>
+                            <td><input type="text" id="qty1" placeholder="Qty"></td>
+                            <td><input type="text" id="make1" placeholder="Make/Model"></td>
+                            <td class="label-cell">LIGHTNING ARRESTER:</td>
+                            <td class="checkbox-cell"><input type="checkbox" id="lightningYes"> YES</td>
+                            <td class="checkbox-cell"><input type="checkbox" id="lightningNo"> NO</td>
+                            <td></td>
+                        </tr>
+
+                        <!-- BATTERY Row -->
+                        <tr>
+                            <td><input type="text" id="desc2" value="BATTERY"></td>
+                            <td><input type="text" id="rating2" placeholder="Rating"></td>
+                            <td><input type="text" id="qty2" placeholder="Qty"></td>
+                            <td><input type="text" id="make2" placeholder="Make/Model"></td>
+                            <td class="label-cell">ARRAY JUNCTION BOX:</td>
+                            <td class="checkbox-cell"><input type="checkbox" id="arrayYes"> YES</td>
+                            <td class="checkbox-cell"><input type="checkbox" id="arrayNo"> NO</td>
+                            <td></td>
+                        </tr>
+
+                        <!-- SOLAR PV PANELS Row -->
+                        <tr>
+                            <td><input type="text" id="desc3" value="SOLAR PV PANELS"></td>
+                            <td><input type="text" id="rating3" placeholder="Rating"></td>
+                            <td><input type="text" id="qty3" placeholder="Qty"></td>
+                            <td><input type="text" id="make3" placeholder="Make/Model"></td>
+                            <td class="label-cell">EARTHING:</td>
+                            <td class="checkbox-cell"><input type="checkbox" id="earthingYes"> YES</td>
+                            <td class="checkbox-cell"><input type="checkbox" id="earthingNo"> NO</td>
+                            <td></td>
+                        </tr>
+
+                        <!-- Priority Logic Row -->
+                        <tr>
+                            <td class="label-cell">PRIORITY LOGIC:</td>
+                            <td colspan="3">
+                                <label><input type="checkbox" id="sbg"> SBG(Solar-Battery-Grid)</label>
+                            </td>
+                            <td class="label-cell">EARTHING QTY:</td>
+                            <td><input type="text" id="earthingQty" placeholder="NO'S"></td>
+                            <td class="highlight-yellow"><input type="text" id="earthingLA" placeholder="LA"></td>
+                            <td>
+                                <span class="highlight-green">MMS</span>
+                                <input type="text" id="earthingINV" placeholder="INV" style="width:50%;">
+                            </td>
+                        </tr>
+
+                        <!-- Nature of Job Row -->
+                        <tr>
+                            <td class="label-cell">NATURE OF JOB:</td>
+                            <td colspan="3">
+                                <label><input type="checkbox" id="installation"> INSTALLATION</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="breakdown"> BREAK
+                                    DOWN</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="maintenance">
+                                    MAINTENANCE</label>
+                            </td>
+                            <td class="label-cell">SOLAR MONITORING:</td>
+                            <td class="checkbox-cell"><input type="checkbox" id="monitorYes"> YES</td>
+                            <td class="checkbox-cell" colspan="2"><input type="checkbox" id="monitorNo"> NO</td>
+                        </tr>
+
+                        <!-- System Configuration Row -->
+                        <tr>
+                            <td colspan="8">
+                                <strong>System Configuration:</strong>
+                                <label style="margin-left:10px;"><input type="checkbox" id="ongrid"> ONGRID</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="solarPcu"> SOLAR PCU</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="solarHybrid"> SOLAR HYBRID
+                                    INVERTER</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="chargeController"> CHARGE
+                                    CONTROLLER</label>
+                            </td>
+                        </tr>
+
+                        <!-- Nature of Complaint Row -->
+                        <tr>
+                            <td class="label-cell" colspan="2">NATURE OF COMPLAINT:</td>
+                            <td colspan="6"><textarea id="natureOfComplaint"
+                                    placeholder="Enter nature of complaint"></textarea></td>
+                        </tr>
+
+                        <!-- Action Taken Row -->
+                        <tr>
+                            <td class="label-cell" colspan="2">ACTION TAKEN:</td>
+                            <td colspan="6"><textarea id="actionTaken" placeholder="Enter action taken"></textarea></td>
+                        </tr>
+
+                        <!-- Spares Replaced Row -->
+                        <tr>
+                            <td class="label-cell" colspan="2">SPARES REPLACED IF ANY:</td>
+                            <td colspan="6"><textarea id="sparesReplaced"
+                                    placeholder="Enter spares replaced"></textarea></td>
+                        </tr>
+
+                        <!-- Type of Load Row -->
+                        <tr>
+                            <td class="label-cell" colspan="2">TYPE OF LOAD:</td>
+                            <td colspan="6">
+                                <label><input type="checkbox" id="computers"> COMPUTERS</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="lighting"> Lighting
+                                    Application</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="motors"> Motors</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="otherLoad"> Other</label>
+                                <input type="text" id="otherLoadText" placeholder="if any Mention"
+                                    style="width:150px; margin-left:5px;">
+                            </td>
+                        </tr>
+
+                        <!-- Parameters Header Row -->
+                        <tr class="param-section">
+                            <th colspan="2">INPUT PARAMETERS</th>
+                            <th colspan="2">PANEL PARAMETERS</th>
+                            <th colspan="2">OUTPUT PARAMETERS</th>
+                            <th colspan="2">BATTERY PARAMETERS</th>
+                        </tr>
+
+                        <!-- Parameters Row 1 -->
+                        <tr>
+                            <td class="param-label">PN</td>
+                            <td><input type="text" id="inputPN" placeholder="V/RY:"></td>
+                            <td><input type="text" id="panelVolat" placeholder="V ARRAY VOLAT:"></td>
+                            <td></td>
+                            <td><input type="text" id="outputVoltage" placeholder="V VOLTAGE:"></td>
+                            <td>V</td>
+                            <td class="label-cell">BATTERY VOLTAGE:</td>
+                            <td><input type="text" id="batteryVoltage" placeholder="V"></td>
+                        </tr>
+
+                        <!-- Parameters Row 2 -->
+                        <tr>
+                            <td class="param-label">PE</td>
+                            <td><input type="text" id="inputPE" placeholder="V/YB:"></td>
+                            <td><input type="text" id="panelAmps" placeholder="V ARRAY AMPS:"></td>
+                            <td></td>
+                            <td><input type="text" id="outputCurrent" placeholder="A CURRENT:"></td>
+                            <td>A</td>
+                            <td class="label-cell">CHARGING CURRENT:</td>
+                            <td><input type="text" id="chargingCurrent" placeholder="A"></td>
+                        </tr>
+
+                        <!-- Parameters Row 3 -->
+                        <tr>
+                            <td class="param-label">NE</td>
+                            <td><input type="text" id="inputNE" placeholder="V/BR:"></td>
+                            <td><input type="text" id="panelV" placeholder="V"></td>
+                            <td></td>
+                            <td colspan="4"></td>
+                        </tr>
+
+                        <!-- Distilled Water Row -->
+                        <tr>
+                            <td colspan="6"><strong>DISTILLED WATER LEVEL IN TUBULAR BATTERY:</strong>
+                                <label style="margin-left:10px;"><input type="checkbox" id="available">
+                                    AVAILABLE</label>
+                                <label style="margin-left:10px;"><input type="checkbox" id="toppedUp"> TOPPED UP</label>
+                            </td>
+                            <td class="label-cell">LITRES</td>
+                            <td><input type="text" id="litres" placeholder="Enter litres"></td>
+                        </tr>
+
+                        <!-- Certification Row -->
+                        <tr>
+                            <td colspan="8" style="text-align:center; font-style:italic; padding:15px;">
+                                Certified that the above equipment are working in good condition and to our satisfaction
+                            </td>
+                        </tr>
+
+                        <!-- Engineer & Customer Remarks Row -->
+                        <tr>
+                            <td class="label-cell" colspan="2">ENGINEER REMARKS:</td>
+                            <td colspan="2"><textarea id="engineerRemarks1" placeholder="Enter remarks"></textarea></td>
+                            <td class="label-cell" colspan="2">CUSTOMER REMARKS:</td>
+                            <td colspan="2"><textarea id="customerRemarks1" placeholder="Enter remarks"></textarea></td>
+                        </tr>
+
+                        <!-- Signature Row -->
+                        <tr>
+                            <td class="label-cell signature-cell" colspan="2">SIGNATURE:</td>
+                            <td colspan="2" class="signature-cell"><input type="text" id="engineerSignature1"
+                                    placeholder=""></td>
+                            <td class="label-cell signature-cell" colspan="2">SIGNATURE:</td>
+                            <td colspan="2" class="signature-cell"><input type="text" id="customerSignature1"
+                                    placeholder=""></td>
+                        </tr>
+
+                        <!-- Name Row -->
+                        <tr>
+                            <td class="label-cell">NAME:</td>
+                            <td colspan="3"><input type="text" id="engineerName1" placeholder="Enter name"></td>
+                            <td class="label-cell">NAME:</td>
+                            <td colspan="3"><input type="text" id="customerName1" placeholder="Enter name"></td>
+                        </tr>
+
+                        <!-- Date Row -->
+                        <tr>
+                            <td class="label-cell">DATE:</td>
+                            <td colspan="3"><input type="date" id="engineerDate1"></td>
+                            <td class="label-cell">DATE:</td>
+                            <td colspan="3"><input type="date" id="customerDate1"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="form-divider">
+                    <span>SERIAL NUMBERS FORM</span>
+                </div>
+
+                <!-- ============================================
+                     FORM 2: Serial Numbers
+                     ============================================ -->
+                <div class="service-report-container">
+                    <table class="serial-form" id="serialNumbersForm">
+                        <!-- Serial Numbers Header -->
+                        <tr>
+                            <td class="section-header" colspan="6">SERIAL NUMBERS</td>
+                        </tr>
+
+                        <!-- Unit Rating Row -->
+                        <tr>
+                            <td class="label-cell">UNIT RATING</td>
+                            <td>:</td>
+                            <td><input type="text" id="unitRatingQty" placeholder="QTY"></td>
+                            <td><input type="text" id="unitRatingNo" placeholder="NO"></td>
+                            <td class="label-cell">SERIAL No:</td>
+                            <td><input type="text" id="unitRatingSerial" placeholder="Enter serial number"></td>
+                        </tr>
+
+                        <!-- AJB/DCDB Row -->
+                        <tr>
+                            <td class="label-cell">AJB / DCDB</td>
+                            <td>:</td>
+                            <td><input type="text" id="ajbQty" placeholder="QTY"></td>
+                            <td><input type="text" id="ajbNo" placeholder="NO"></td>
+                            <td class="label-cell">SERIAL No:</td>
+                            <td><input type="text" id="ajbSerial" placeholder="Enter serial number"></td>
+                        </tr>
+
+                        <!-- ACDB Row -->
+                        <tr>
+                            <td class="label-cell">ACDB</td>
+                            <td>:</td>
+                            <td><input type="text" id="acdbQty" placeholder="QTY"></td>
+                            <td><input type="text" id="acdbNo" placeholder="NO"></td>
+                            <td class="label-cell">SERIAL No:</td>
+                            <td><input type="text" id="acdbSerial" placeholder="Enter serial number"></td>
+                        </tr>
+
+                        <!-- Solar Monitoring Row -->
+                        <tr>
+                            <td class="label-cell">SOLAR MONITORING</td>
+                            <td>:</td>
+                            <td><input type="text" id="solarMonQty" placeholder="QTY"></td>
+                            <td><input type="text" id="solarMonNo" placeholder="NO"></td>
+                            <td class="label-cell">SERIAL No:</td>
+                            <td><input type="text" id="solarMonSerial" placeholder="Enter serial number"></td>
+                        </tr>
+
+                        <!-- Batteries/Panel Header Row -->
+                        <tr>
+                            <td class="section-header" colspan="3">BATTERIES/PANEL BATCH CODE / SERIAL Nos.</td>
+                            <td class="section-header" colspan="3">BATTERIES/PANEL BATCH CODE / SERIAL Nos.</td>
+                        </tr>
+
+                        <!-- Empty rows for batteries/panel serial numbers (left and right columns) -->
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery1" placeholder="Enter batch code/serial"></td>
+                            <td colspan="3"><input type="text" id="battery2" placeholder="Enter batch code/serial"></td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery3" placeholder="Enter batch code/serial"></td>
+                            <td colspan="3"><input type="text" id="battery4" placeholder="Enter batch code/serial"></td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery5" placeholder="Enter batch code/serial"></td>
+                            <td colspan="3"><input type="text" id="battery6" placeholder="Enter batch code/serial"></td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery7" placeholder="Enter batch code/serial"></td>
+                            <td colspan="3"><input type="text" id="battery8" placeholder="Enter batch code/serial"></td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery9" placeholder="Enter batch code/serial"></td>
+                            <td colspan="3"><input type="text" id="battery10" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery11" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery12" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery13" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery14" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery15" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery16" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery17" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery18" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery19" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery20" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery21" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery22" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery23" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery24" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery25" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery26" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery27" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery28" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+                        <tr class="empty-row">
+                            <td colspan="3"><input type="text" id="battery29" placeholder="Enter batch code/serial">
+                            </td>
+                            <td colspan="3"><input type="text" id="battery30" placeholder="Enter batch code/serial">
+                            </td>
+                        </tr>
+
+                        <!-- Engineer & Customer Remarks Row -->
+                        <tr>
+                            <td class="label-cell" colspan="2">ENGINEER REMARKS:</td>
+                            <td colspan="1"><textarea id="engineerRemarks2" placeholder="Enter remarks"
+                                    style="min-height:40px;"></textarea></td>
+                            <td class="label-cell" colspan="2">CUSTOMER REMARKS:</td>
+                            <td colspan="1"><textarea id="customerRemarks2" placeholder="Enter remarks"
+                                    style="min-height:40px;"></textarea></td>
+                        </tr>
+
+                        <!-- Signature Row -->
+                        <tr>
+                            <td class="label-cell signature-cell">SIGNATURE:</td>
+                            <td colspan="2" class="signature-cell"><input type="text" id="engineerSignature2"
+                                    placeholder=""></td>
+                            <td class="label-cell signature-cell">SIGNATURE:</td>
+                            <td colspan="2" class="signature-cell"><input type="text" id="customerSignature2"
+                                    placeholder=""></td>
+                        </tr>
+
+                        <!-- Name Row -->
+                        <tr>
+                            <td class="label-cell">NAME:</td>
+                            <td colspan="2"><input type="text" id="engineerName2" placeholder="Enter name"></td>
+                            <td class="label-cell">NAME:</td>
+                            <td colspan="2"><input type="text" id="customerName2" placeholder="Enter name"></td>
+                        </tr>
+
+                        <!-- Date Row -->
+                        <tr>
+                            <td class="label-cell">DATE:</td>
+                            <td colspan="2"><input type="date" id="engineerDate2"></td>
+                            <td class="label-cell">DATE:</td>
+                            <td colspan="2"><input type="date" id="customerDate2"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button class="btn btn-print" onclick="window.print()">
+                        <i class="fas fa-print"></i> Print Report
+                    </button>
+                    <button class="btn btn-save" onclick="saveFormData()">
+                        <i class="fas fa-save"></i> Save Data
+                    </button>
+                    <button class="btn btn-clear" onclick="clearAllForms()">
+                        <i class="fas fa-trash-alt"></i> Clear All
+                    </button>
                 </div>
             </div>
         </div>
@@ -851,6 +1727,238 @@
                 }
             });
         })();
+
+        // ============================================
+        // Form Management Functions
+        // ============================================
+
+        // Save form data to localStorage
+        function saveFormData() {
+            const formData = {
+                // Service Report Form Data
+                serviceReport: {
+                    mneNo: document.getElementById('mneNo')?.value || '',
+                    customerAddress: document.getElementById('customerAddress')?.value || '',
+                    installationAddress: document.getElementById('installationAddress')?.value || '',
+                    contactPerson1: document.getElementById('contactPerson1')?.value || '',
+                    contactPerson2: document.getElementById('contactPerson2')?.value || '',
+                    contactNo1: document.getElementById('contactNo1')?.value || '',
+                    contactNo2: document.getElementById('contactNo2')?.value || '',
+                    underWarranty: document.getElementById('underWarranty')?.checked || false,
+                    amc: document.getElementById('amc')?.checked || false,
+                    chargable: document.getElementById('chargable')?.checked || false,
+                    unitSlNo: document.getElementById('unitSlNo')?.value || '',
+                    callAttendedDate: document.getElementById('callAttendedDate')?.value || '',
+                    callAttendedTime: document.getElementById('callAttendedTime')?.value || '',
+                    callCompletedDate: document.getElementById('callCompletedDate')?.value || '',
+                    callCompletedTime: document.getElementById('callCompletedTime')?.value || '',
+                    dateOfDelivery: document.getElementById('dateOfDelivery')?.value || '',
+                    dateOfInstallation: document.getElementById('dateOfInstallation')?.value || '',
+                    warrantyStartDate: document.getElementById('warrantyStartDate')?.value || '',
+                    warrantyExpiryDate: document.getElementById('warrantyExpiryDate')?.value || '',
+                    desc1: document.getElementById('desc1')?.value || '',
+                    rating1: document.getElementById('rating1')?.value || '',
+                    qty1: document.getElementById('qty1')?.value || '',
+                    make1: document.getElementById('make1')?.value || '',
+                    desc2: document.getElementById('desc2')?.value || '',
+                    rating2: document.getElementById('rating2')?.value || '',
+                    qty2: document.getElementById('qty2')?.value || '',
+                    make2: document.getElementById('make2')?.value || '',
+                    desc3: document.getElementById('desc3')?.value || '',
+                    rating3: document.getElementById('rating3')?.value || '',
+                    qty3: document.getElementById('qty3')?.value || '',
+                    make3: document.getElementById('make3')?.value || '',
+                    lightningYes: document.getElementById('lightningYes')?.checked || false,
+                    lightningNo: document.getElementById('lightningNo')?.checked || false,
+                    arrayYes: document.getElementById('arrayYes')?.checked || false,
+                    arrayNo: document.getElementById('arrayNo')?.checked || false,
+                    earthingYes: document.getElementById('earthingYes')?.checked || false,
+                    earthingNo: document.getElementById('earthingNo')?.checked || false,
+                    sbg: document.getElementById('sbg')?.checked || false,
+                    earthingQty: document.getElementById('earthingQty')?.value || '',
+                    earthingLA: document.getElementById('earthingLA')?.value || '',
+                    earthingINV: document.getElementById('earthingINV')?.value || '',
+                    installation: document.getElementById('installation')?.checked || false,
+                    breakdown: document.getElementById('breakdown')?.checked || false,
+                    maintenance: document.getElementById('maintenance')?.checked || false,
+                    monitorYes: document.getElementById('monitorYes')?.checked || false,
+                    monitorNo: document.getElementById('monitorNo')?.checked || false,
+                    ongrid: document.getElementById('ongrid')?.checked || false,
+                    solarPcu: document.getElementById('solarPcu')?.checked || false,
+                    solarHybrid: document.getElementById('solarHybrid')?.checked || false,
+                    chargeController: document.getElementById('chargeController')?.checked || false,
+                    natureOfComplaint: document.getElementById('natureOfComplaint')?.value || '',
+                    actionTaken: document.getElementById('actionTaken')?.value || '',
+                    sparesReplaced: document.getElementById('sparesReplaced')?.value || '',
+                    computers: document.getElementById('computers')?.checked || false,
+                    lighting: document.getElementById('lighting')?.checked || false,
+                    motors: document.getElementById('motors')?.checked || false,
+                    otherLoad: document.getElementById('otherLoad')?.checked || false,
+                    otherLoadText: document.getElementById('otherLoadText')?.value || '',
+                    inputPN: document.getElementById('inputPN')?.value || '',
+                    inputPE: document.getElementById('inputPE')?.value || '',
+                    inputNE: document.getElementById('inputNE')?.value || '',
+                    panelVolat: document.getElementById('panelVolat')?.value || '',
+                    panelAmps: document.getElementById('panelAmps')?.value || '',
+                    panelV: document.getElementById('panelV')?.value || '',
+                    outputVoltage: document.getElementById('outputVoltage')?.value || '',
+                    outputCurrent: document.getElementById('outputCurrent')?.value || '',
+                    batteryVoltage: document.getElementById('batteryVoltage')?.value || '',
+                    chargingCurrent: document.getElementById('chargingCurrent')?.value || '',
+                    available: document.getElementById('available')?.checked || false,
+                    toppedUp: document.getElementById('toppedUp')?.checked || false,
+                    litres: document.getElementById('litres')?.value || '',
+                    engineerRemarks1: document.getElementById('engineerRemarks1')?.value || '',
+                    customerRemarks1: document.getElementById('customerRemarks1')?.value || '',
+                    engineerName1: document.getElementById('engineerName1')?.value || '',
+                    customerName1: document.getElementById('customerName1')?.value || '',
+                    engineerDate1: document.getElementById('engineerDate1')?.value || '',
+                    customerDate1: document.getElementById('customerDate1')?.value || ''
+                },
+                // Serial Numbers Form Data
+                serialNumbers: {
+                    unitRatingQty: document.getElementById('unitRatingQty')?.value || '',
+                    unitRatingNo: document.getElementById('unitRatingNo')?.value || '',
+                    unitRatingSerial: document.getElementById('unitRatingSerial')?.value || '',
+                    ajbQty: document.getElementById('ajbQty')?.value || '',
+                    ajbNo: document.getElementById('ajbNo')?.value || '',
+                    ajbSerial: document.getElementById('ajbSerial')?.value || '',
+                    acdbQty: document.getElementById('acdbQty')?.value || '',
+                    acdbNo: document.getElementById('acdbNo')?.value || '',
+                    acdbSerial: document.getElementById('acdbSerial')?.value || '',
+                    solarMonQty: document.getElementById('solarMonQty')?.value || '',
+                    solarMonNo: document.getElementById('solarMonNo')?.value || '',
+                    solarMonSerial: document.getElementById('solarMonSerial')?.value || '',
+                    engineerRemarks2: document.getElementById('engineerRemarks2')?.value || '',
+                    customerRemarks2: document.getElementById('customerRemarks2')?.value || '',
+                    engineerName2: document.getElementById('engineerName2')?.value || '',
+                    customerName2: document.getElementById('customerName2')?.value || '',
+                    engineerDate2: document.getElementById('engineerDate2')?.value || '',
+                    customerDate2: document.getElementById('customerDate2')?.value || ''
+                },
+                // Battery serial numbers
+                batteries: []
+            };
+
+            // Collect battery serial numbers
+            for (let i = 1; i <= 30; i++) {
+                const batteryField = document.getElementById('battery' + i);
+                if (batteryField) {
+                    formData.batteries.push(batteryField.value || '');
+                }
+            }
+
+            // Save to localStorage
+            localStorage.setItem('mnServiceReportData', JSON.stringify(formData));
+
+            // Show success message
+            alert('Form data saved successfully!');
+        }
+
+        // Clear all form fields
+        function clearAllForms() {
+            if (!confirm('Are you sure you want to clear all form data? This action cannot be undone.')) {
+                return;
+            }
+
+            // Clear all text inputs
+            const textInputs = document.querySelectorAll('.report-form input[type="text"], .report-form input[type="date"], .serial-form input[type="text"], .serial-form input[type="date"]');
+            textInputs.forEach(input => {
+                input.value = '';
+            });
+
+            // Clear all textareas
+            const textareas = document.querySelectorAll('.report-form textarea, .serial-form textarea');
+            textareas.forEach(textarea => {
+                textarea.value = '';
+            });
+
+            // Uncheck all checkboxes
+            const checkboxes = document.querySelectorAll('.report-form input[type="checkbox"], .serial-form input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            // Reset default values for description fields
+            const desc1 = document.getElementById('desc1');
+            const desc2 = document.getElementById('desc2');
+            const desc3 = document.getElementById('desc3');
+            if (desc1) desc1.value = 'ONGRID/SHU/PCU';
+            if (desc2) desc2.value = 'BATTERY';
+            if (desc3) desc3.value = 'SOLAR PV PANELS';
+
+            // Remove from localStorage
+            localStorage.removeItem('mnServiceReportData');
+
+            alert('All form data has been cleared.');
+        }
+
+        // Load saved data on page load (if available)
+        function loadSavedData() {
+            const savedData = localStorage.getItem('mnServiceReportData');
+            if (!savedData) return;
+
+            try {
+                const formData = JSON.parse(savedData);
+
+                // Load Service Report data
+                if (formData.serviceReport) {
+                    Object.keys(formData.serviceReport).forEach(key => {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            if (element.type === 'checkbox') {
+                                element.checked = formData.serviceReport[key];
+                            } else {
+                                element.value = formData.serviceReport[key];
+                            }
+                        }
+                    });
+                }
+
+                // Load Serial Numbers data
+                if (formData.serialNumbers) {
+                    Object.keys(formData.serialNumbers).forEach(key => {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            if (element.type === 'checkbox') {
+                                element.checked = formData.serialNumbers[key];
+                            } else {
+                                element.value = formData.serialNumbers[key];
+                            }
+                        }
+                    });
+                }
+
+                // Load battery data
+                if (formData.batteries) {
+                    formData.batteries.forEach((value, index) => {
+                        const element = document.getElementById('battery' + (index + 1));
+                        if (element) {
+                            element.value = value;
+                        }
+                    });
+                }
+            } catch (e) {
+                console.error('Error loading saved data:', e);
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load saved data when dashboard is unlocked
+            const dashboardUnlocked = document.getElementById('dashboardUnlocked');
+            if (dashboardUnlocked) {
+                // Use MutationObserver to detect when dashboard becomes visible
+                const observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (mutation) {
+                        if (mutation.target.classList.contains('active')) {
+                            loadSavedData();
+                        }
+                    });
+                });
+                observer.observe(dashboardUnlocked, { attributes: true, attributeFilter: ['class'] });
+            }
+        });
     </script>
 </body>
 
