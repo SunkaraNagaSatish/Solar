@@ -12,7 +12,7 @@
 
 /* Page Header Section */
 .contact-page-header {
-    background: linear-gradient(135deg, var(--olive-green) 0%, var(--olive-green-dark) 100%);
+    background: linear-gradient(135deg, #1F242C 0%, #3a414e 100%);
     padding: 80px 0 60px;
     text-align: center;
     color: var(--white);

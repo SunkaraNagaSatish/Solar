@@ -36,6 +36,181 @@
     <link rel="stylesheet" href="assets/css/custom-navbar.css">
     <!--<< Footer Custom CSS >>-->
     <link rel="stylesheet" href="assets/css/footer-custom.css">
+
+    <!-- Dashboard Password Modal Styles -->
+    <style>
+        .dashboard-password-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            width: 90%;
+            max-width: 450px;
+            border: 2px solid #6b8e23;
+        }
+
+        .dashboard-password-modal.active {
+            display: block;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
+
+        .dashboard-password-modal h3 {
+            color: #6b8e23;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .dashboard-password-modal p {
+            color: #ccc;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .password-input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .password-input-group input {
+            width: 100%;
+            padding: 15px 45px 15px 15px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            background: #1a1a1a;
+            color: #fff !important;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .password-input-group input:focus {
+            outline: none;
+            border-color: #6b8e23;
+            box-shadow: 0 0 10px rgba(107, 142, 35, 0.3);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #888;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #6b8e23;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-btn-submit {
+            background: linear-gradient(135deg, #6b8e23 0%, #556b2f 100%);
+            color: #fff;
+        }
+
+        .modal-btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 142, 35, 0.4);
+        }
+
+        .modal-btn-cancel {
+            background: #444;
+            color: #fff;
+        }
+
+        .modal-btn-cancel:hover {
+            background: #555;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            75% {
+                transform: translateX(10px);
+            }
+        }
+
+        .footer-m-trigger {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            color: inherit !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -109,9 +284,7 @@
         </div>
     </div>
 
-    <!--<< Mouse Cursor Start >>-->
-    <div class="mouse-cursor cursor-outer"></div>
-    <div class="mouse-cursor cursor-inner"></div>
+
 
     <!-- Back To Top Start -->
     <div class="scroll-up">
@@ -199,51 +372,16 @@
     <div class="offcanvas__overlay"></div>
 
     <!-- Header Section Start -->
-    <header class="header-section-2">
-        <div class="header-top style-bg">
-            <div class="container">
-                <div class="header-top-wrapper style-2">
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919010100175">+919010100175, <br>+919676468976 </a>
-                        </li>
-                        <li>
-                            <i class="far fa-envelope"></i>
-                            <a href="mnenterprises.atp@gmail.com" class="link">mnenterprises.atp@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            6‑71, Near ACB Office, TV Tower, <br>
-                            Lenin Nagar, Anantapur – 515001.
-                        </li>
-                    </ul>
-                    <div class="top-right">
-                        <div class="social-icon d-flex align-items-center">
-                            <span>Follow Us:</span>
-                            <a href="https://www.facebook.com/share/1CZJM6XeSp/?mibextid=wwXIfr"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/mnenterprises2025?igsh=emt5NjBpZmJvOXR6&utm_source=qr"><i
-                                    class="fa-brands fa-instagram"></i></a>
-                        </div>
+    <header id="header-sticky" class="header-1 header-overlay">
+        <div class="container-fluid">
+            <div class="mega-menu-wrapper">
+                <div class="header-main">
+                    <div class="logo">
+                        <a href="index.html" class="header-logo">
+                            <img src="assets/img/logo/MN LOGO.svg" style=" width: 10rem;" alt="logo-img">
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div id="header-sticky" class="header-3">
-            <div class="container">
-                <div class="mega-menu-wrapper">
-                    <div class="header-main">
-                        <div class="header-left">
-                            <div class="logo">
-                                <a href="index.html" class="header-logo">
-                                    <img src="assets/img/logo/white-logo.svg" alt="logo-img">
-                                </a>
-                                <a href="index.html" class="header-logo-2">
-                                    <img src="assets/img/logo/MN LOGO.svg" style=" width: 10rem;" alt="logo-img">
-                                </a>
-                            </div>
-                        </div>
+                    <div class="header-left">
                         <div class="mean__menu-wrapper">
                             <div class="main-menu">
                                 <nav id="mobile-menu">
@@ -265,36 +403,12 @@
                                                 <li><a href="index-3.html">Home 03</a></li>
                                             </ul>
                                         </li>
+                                        <li><a href="service.html">Services</a></li>
                                         <li>
                                             <a href="about.html">About Us</a>
                                         </li>
-                                        <li><a href="service.html">Services</a></li>
-                                        <li class="has-dropdown">
-                                            <a href="news.html">
-                                                Pages
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li>
-                                                    <a href="project.html">Project</a>
-                                                </li>
-                                                <li>
-                                                    <a href="team.html">Team</a>
-                                                </li>
-                                                <li>
-                                                    <a href="dashboard.html">Dashboard</a>
-                                                </li>
-
-                                            </ul>
-                                        </li>
                                         <li>
-                                            <a href="news.html">
-                                                Blog
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="news.html">Blog</a></li>
-                                            </ul>
+                                            <a href="news.html">Blog</a>
                                         </li>
                                         <li>
                                             <a href="contact.html">Contact</a>
@@ -303,18 +417,17 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="header-right d-flex justify-content-end align-items-center">
-                            <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a>
-                            <div class="header__hamburger d-xl-block my-auto">
-                                <div class="sidebar__toggle">
-                                    <i class="fas fa-bars"></i>
-                                </div>
-                            </div>
-                            <div class="header-button">
-                                <a href="contact.html" class="theme-btn">
-                                    get Started
-                                    <i class="fas fa-arrow-right-long"></i>
-                                </a>
+                    </div>
+                    <div class="header-right d-flex justify-content-end align-items-center">
+                        <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a>
+                        <div class="header-button">
+                            <a href="contact.html" class="theme-btn">
+                                Get a quote <i class="fas fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                        <div class="header__hamburger d-xl-none my-auto">
+                            <div class="sidebar__toggle">
+                                <i class="fas fa-bars"></i>
                             </div>
                         </div>
                     </div>
@@ -486,7 +599,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy1.jpg" alt="service-img">
+                                <img src="assets/img/service/energy2.jpg" alt="service-img">
                                 <div class="icon">
                                     <i class="fas fa-plug" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -505,7 +618,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy1.jpg" alt="service-img">
+                                <img src="assets/img/service/energy3.jpg" alt="service-img">
                                 <div class="icon">
                                     <i class="fas fa-battery-full" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -524,7 +637,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy1.jpg" alt="service-img">
+                                <img src="assets/img/service/energy4.jpg" alt="service-img">
                                 <div class="icon">
                                     <i class="fas fa-car-battery" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -543,7 +656,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energ2.jpg" alt="service-img">
+                                <img src="assets/img/service/energy5.jpg" alt="service-img">
                                 <div class="icon">
                                     <i class="fas fa-video" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -562,7 +675,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/en3.jpg" alt="service-img">
+                                <img src="assets/img/service/energy6.jpg" alt="service-img">
                                 <div class="icon">
                                     <i class="fas fa-desktop" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -1009,7 +1122,7 @@
     <!-- Testimonial Section Start -->
     <section class="testimonial-section fix section-padding" style="margin-top: -170px;">
         <div class="map-shape">
-            <img src="assets/img/testimonial/map-shape.png" alt="shape-img">
+            <img src="assets/img/testimonial/reviews.png" alt="shape-img">
         </div>
         <div class="container">
             <div class="section-title text-center" style="padding-top: 20px;"><br>
@@ -1251,7 +1364,7 @@
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="service.html">Our Services</a></li>
-                                <li><a href="team.html">Our Team</a></li>
+
                                 <li><a href="news.html">Blog</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
@@ -1336,7 +1449,8 @@
             <div class="container">
                 <div class="footer-bottom-wrapper text-center">
                     <p class="wow fadeInUp" data-wow-delay=".3s">
-                        © <a href="index.html">MN Enterprises</a> 2025 | <span>All Rights</span> Reserved.
+                        © <span class="footer-m-trigger" id="footerMTrigger">M</span><a href="index.html">N
+                            Enterprises</a> 2025 | <span>All Rights</span> Reserved.
                     </p>
                 </div>
             </div>
@@ -1367,6 +1481,89 @@
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
+
+    <!-- Dashboard Access Script -->
+    <!-- Password Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="dashboard-password-modal" id="passwordModal">
+        <h3>Access Dashboard</h3>
+        <p>Enter the password to access the dashboard</p>
+        <div class="password-input-group">
+            <input type="password" id="dashboardPassword" placeholder="Enter password">
+            <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+        </div>
+        <div class="error-message" id="errorMessage">Incorrect password. Please try again.</div>
+        <div class="modal-buttons">
+            <button class="modal-btn modal-btn-cancel" id="cancelBtn">Cancel</button>
+            <button class="modal-btn modal-btn-submit" id="submitBtn">Submit</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        (function () {
+            'use strict';
+            const CORRECT_PASSWORD = 'MNENTERPRISES10K';
+            const footerMTrigger = document.getElementById('footerMTrigger');
+            const passwordModal = document.getElementById('passwordModal');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const passwordInput = document.getElementById('dashboardPassword');
+            const togglePassword = document.getElementById('togglePassword');
+            const submitBtn = document.getElementById('submitBtn');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const errorMessage = document.getElementById('errorMessage');
+
+            function openModal() {
+                passwordModal.classList.add('active');
+                modalOverlay.classList.add('active');
+                passwordInput.value = '';
+                errorMessage.classList.remove('show');
+                passwordInput.focus();
+            }
+
+            function closeModal() {
+                passwordModal.classList.remove('active');
+                modalOverlay.classList.remove('active');
+                passwordInput.value = '';
+                errorMessage.classList.remove('show');
+            }
+
+            function togglePasswordVisibility() {
+                const type = passwordInput.type === 'password' ? 'text' : 'password';
+                passwordInput.type = type;
+                togglePassword.classList.toggle('fa-eye');
+                togglePassword.classList.toggle('fa-eye-slash');
+            }
+
+            function verifyPassword() {
+                const enteredPassword = passwordInput.value.trim();
+                if (enteredPassword === CORRECT_PASSWORD) {
+                    window.location.href = 'dashboard.html';
+                } else {
+                    errorMessage.classList.add('show');
+                    passwordInput.value = '';
+                    passwordInput.focus();
+                    passwordInput.style.animation = 'shake 0.5s ease';
+                    setTimeout(() => { passwordInput.style.animation = ''; }, 500);
+                }
+            }
+
+            if (footerMTrigger) footerMTrigger.addEventListener('click', openModal);
+            if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+            if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+            if (togglePassword) togglePassword.addEventListener('click', togglePasswordVisibility);
+            if (submitBtn) submitBtn.addEventListener('click', verifyPassword);
+
+            passwordInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') verifyPassword();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && passwordModal.classList.contains('active')) closeModal();
+            });
+        })();
+    </script>
 </body>
 
 </html>

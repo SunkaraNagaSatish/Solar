@@ -38,209 +38,10 @@
     <link rel="stylesheet" href="assets/css/footer-custom.css">
 
     <style>
-        /* Dashboard Password Modal Styles */
-        .dashboard-password-modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
-            z-index: 10000;
-            width: 90%;
-            max-width: 450px;
-            border: 2px solid #6b8e23;
-        }
-
-        .dashboard-password-modal.active {
-            display: block;
-            animation: modalFadeIn 0.3s ease;
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -60%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-        }
-
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-        }
-
-        .modal-overlay.active {
-            display: block;
-        }
-
-        .dashboard-password-modal h3 {
-            color: #6b8e23;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .dashboard-password-modal p {
-            color: #ccc;
-            text-align: center;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        .password-input-group {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .password-input-group input {
-            width: 100%;
-            padding: 15px 45px 15px 15px;
-            border: 2px solid #444;
-            border-radius: 8px;
-            background: #1a1a1a;
-            color: #fff !important;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .password-input-group input:focus {
-            outline: none;
-            border-color: #6b8e23;
-            box-shadow: 0 0 10px rgba(107, 142, 35, 0.3);
-        }
-
-        .password-toggle {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #888;
-            transition: color 0.3s ease;
-        }
-
-        .password-toggle:hover {
-            color: #6b8e23;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .modal-btn {
-            flex: 1;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .modal-btn-submit {
-            background: linear-gradient(135deg, #6b8e23 0%, #556b2f 100%);
-            color: #fff;
-        }
-
-        .modal-btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(107, 142, 35, 0.4);
-        }
-
-        .modal-btn-cancel {
-            background: #444;
-            color: #fff;
-        }
-
-        .modal-btn-cancel:hover {
-            background: #555;
-        }
-
-        .error-message {
-            color: #ff4444;
-            font-size: 14px;
-            text-align: center;
-            margin-top: 10px;
-            display: none;
-        }
-
-        .error-message.show {
-            display: block;
-            animation: shake 0.5s ease;
-        }
-
-        @keyframes shake {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            25% {
-                transform: translateX(-10px);
-            }
-
-            75% {
-                transform: translateX(10px);
-            }
-        }
-
         /* Dashboard Content Styles */
         .dashboard-content {
             min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 250px 0 100px 0;
-        }
-
-        .dashboard-locked {
-            text-align: center;
-            color: #888;
-        }
-
-        .dashboard-locked i {
-            font-size: 80px;
-            color: #444;
-            margin-bottom: 20px;
-        }
-
-        .dashboard-locked h2 {
-            color: #666;
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .dashboard-locked p {
-            color: #888;
-            font-size: 16px;
-        }
-
-        .dashboard-unlocked {
-            display: none;
-            padding: 50px 0;
-        }
-
-        .dashboard-unlocked.active {
-            display: block;
+            padding: 150px 40px 100px 40px;
         }
 
         .dashboard-welcome {
@@ -264,31 +65,26 @@
             opacity: 0.9;
         }
 
-        /* Footer M clickable style */
-        .footer-m-trigger {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
-            color: inherit !important;
-        }
+
 
         /* ============================================
            Service Report Form Styles
            ============================================ */
         .service-report-container {
             background: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
-            margin-bottom: 30px;
+            margin: 0 auto 30px auto;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            overflow-x: auto;
         }
 
         .report-form {
             width: 100%;
             border-collapse: collapse;
             font-family: 'Arial', sans-serif;
-            font-size: 12px;
+            font-size: 11px;
             background: #fff;
             border: 2px solid #000;
         }
@@ -296,7 +92,7 @@
         .report-form th,
         .report-form td {
             border: 1px solid #000;
-            padding: 6px 8px;
+            padding: 4px 6px;
             vertical-align: middle;
             text-align: left;
         }
@@ -313,7 +109,7 @@
             width: 100%;
             border: none;
             background: transparent;
-            font-size: 12px;
+            font-size: 11px;
             font-family: 'Arial', sans-serif;
             padding: 2px 4px;
             box-sizing: border-box;
@@ -334,22 +130,22 @@
 
         .report-form .header-cell {
             text-align: center;
-            padding: 10px;
+            padding: 8px;
         }
 
         .report-form .company-name {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             margin: 0;
         }
 
         .report-form .company-address {
-            font-size: 11px;
+            font-size: 10px;
             margin: 5px 0;
         }
 
         .report-form .company-contact {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: bold;
         }
 
@@ -378,7 +174,8 @@
         .report-form .label-cell {
             font-weight: bold;
             white-space: nowrap;
-            width: 1%;
+            width: auto;
+            min-width: fit-content;
         }
 
         .report-form .checkbox-group {
@@ -511,6 +308,12 @@
                 display: none !important;
             }
 
+            /* Reset page margins and setup for portrait */
+            @page {
+                size: A4 portrait;
+                margin: 10mm;
+            }
+
             /* Reset dashboard content for print */
             .dashboard-content {
                 padding: 0 !important;
@@ -524,9 +327,10 @@
 
             .service-report-container {
                 box-shadow: none !important;
-                padding: 10px !important;
-                margin-bottom: 20px !important;
+                padding: 5px !important;
+                margin-bottom: 15px !important;
                 page-break-after: always;
+                width: 100% !important;
             }
 
             .service-report-container:last-of-type {
@@ -536,15 +340,44 @@
             .report-form,
             .serial-form {
                 page-break-inside: avoid;
+                width: 100% !important;
+                font-size: 10px !important;
+            }
+
+            .report-form th,
+            .report-form td,
+            .serial-form th,
+            .serial-form td {
+                padding: 3px 4px !important;
+                font-size: 10px !important;
+            }
+
+            .report-form input,
+            .report-form textarea,
+            .serial-form input,
+            .serial-form textarea {
+                font-size: 10px !important;
+            }
+
+            .report-form .company-name {
+                font-size: 18px !important;
+            }
+
+            .report-form .company-address,
+            .report-form .company-contact {
+                font-size: 9px !important;
             }
 
             body {
                 background: #fff !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
 
             .container {
                 max-width: 100% !important;
                 padding: 0 !important;
+                margin: 0 auto !important;
             }
         }
 
@@ -710,9 +543,7 @@
         </div>
     </div>
 
-    <!--<< Mouse Cursor Start >>-->
-    <div class="mouse-cursor cursor-outer"></div>
-    <div class="mouse-cursor cursor-inner"></div>
+
 
     <!-- Back To Top Start -->
     <div class="scroll-up">
@@ -800,51 +631,16 @@
     <div class="offcanvas__overlay"></div>
 
     <!-- Header Section Start -->
-    <header class="header-section-2">
-        <div class="header-top style-bg">
-            <div class="container">
-                <div class="header-top-wrapper style-2">
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919010100175">+919010100175, <br>+919676468976 </a>
-                        </li>
-                        <li>
-                            <i class="far fa-envelope"></i>
-                            <a href="mnenterprises.atp@gmail.com" class="link">mnenterprises.atp@gmail.com</a>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            6‑71, Near ACB Office, TV Tower, <br>
-                            Lenin Nagar, Anantapur – 515001.
-                        </li>
-                    </ul>
-                    <div class="top-right">
-                        <div class="social-icon d-flex align-items-center">
-                            <span>Follow Us:</span>
-                            <a href="https://www.facebook.com/share/1CZJM6XeSp/?mibextid=wwXIfr"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/mnenterprises2025?igsh=emt5NjBpZmJvOXR6&utm_source=qr"><i
-                                    class="fa-brands fa-instagram"></i></a>
-                        </div>
+    <header id="header-sticky" class="header-1">
+        <div class="container-fluid">
+            <div class="mega-menu-wrapper">
+                <div class="header-main">
+                    <div class="logo">
+                        <a href="index.html" class="header-logo">
+                            <img src="assets/img/logo/MN LOGO.svg" style=" width: 10rem;" alt="logo-img">
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div id="header-sticky" class="header-3">
-            <div class="container">
-                <div class="mega-menu-wrapper">
-                    <div class="header-main">
-                        <div class="header-left">
-                            <div class="logo">
-                                <a href="index.html" class="header-logo">
-                                    <img src="assets/img/logo/white-logo.svg" alt="logo-img">
-                                </a>
-                                <a href="index.html" class="header-logo-2">
-                                    <img src="assets/img/logo/MN LOGO.svg" style=" width: 10rem;" alt="logo-img">
-                                </a>
-                            </div>
-                        </div>
+                    <div class="header-left">
                         <div class="mean__menu-wrapper">
                             <div class="main-menu">
                                 <nav id="mobile-menu">
@@ -865,35 +661,12 @@
                                                 <li><a href="index-3.html">Home 03</a></li>
                                             </ul>
                                         </li>
+                                        <li><a href="service.html">Services</a></li>
                                         <li>
                                             <a href="about.html">About Us</a>
                                         </li>
-                                        <li><a href="service.html">Services</a></li>
-                                        <li class="has-dropdown active">
-                                            <a href="news.html">
-                                                Pages
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li>
-                                                    <a href="project.html">Project</a>
-                                                </li>
-                                                <li>
-                                                    <a href="team.html">Team</a>
-                                                </li>
-                                                <li class="active">
-                                                    <a href="dashboard.html">Dashboard</a>
-                                                </li>
-                                            </ul>
-                                        </li>
                                         <li>
-                                            <a href="news.html">
-                                                Blog
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="news.html">Blog</a></li>
-                                            </ul>
+                                            <a href="news.html">Blog</a>
                                         </li>
                                         <li>
                                             <a href="contact.html">Contact</a>
@@ -902,18 +675,17 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="header-right d-flex justify-content-end align-items-center">
-                            <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a>
-                            <div class="header__hamburger d-xl-block my-auto">
-                                <div class="sidebar__toggle">
-                                    <i class="fas fa-bars"></i>
-                                </div>
-                            </div>
-                            <div class="header-button">
-                                <a href="contact.html" class="theme-btn">
-                                    get Started
-                                    <i class="fas fa-arrow-right-long"></i>
-                                </a>
+                    </div>
+                    <div class="header-right d-flex justify-content-end align-items-center">
+                        <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a>
+                        <div class="header-button">
+                            <a href="contact.html" class="theme-btn">
+                                Get a quote <i class="fas fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                        <div class="header__hamburger d-xl-none my-auto">
+                            <div class="sidebar__toggle">
+                                <i class="fas fa-bars"></i>
                             </div>
                         </div>
                     </div>
@@ -936,34 +708,13 @@
         </div>
     </div>
 
-    <!-- Password Modal -->
-    <div class="modal-overlay" id="modalOverlay"></div>
-    <div class="dashboard-password-modal" id="passwordModal">
-        <h3>Access Dashboard</h3>
-        <p>Enter the password to unlock dashboard content</p>
-        <div class="password-input-group">
-            <input type="password" id="dashboardPassword" placeholder="Enter password">
-            <i class="fas fa-eye password-toggle" id="togglePassword"></i>
-        </div>
-        <div class="error-message" id="errorMessage">Incorrect password. Please try again.</div>
-        <div class="modal-buttons">
-            <button class="modal-btn modal-btn-cancel" id="cancelBtn">Cancel</button>
-            <button class="modal-btn modal-btn-submit" id="submitBtn">Submit</button>
-        </div>
-    </div>
+
 
     <!-- Dashboard Content Section -->
     <section class="dashboard-content">
         <div class="container">
-            <!-- Locked State -->
-            <div class="dashboard-locked" id="dashboardLocked">
-                <i class="fas fa-lock"></i>
-                <h2>Dashboard Locked</h2>
-                <p>This content is password protected.</p>
-            </div>
-
-            <!-- Unlocked State -->
-            <div class="dashboard-unlocked" id="dashboardUnlocked">
+            <!-- Dashboard Content -->
+            <div class="dashboard-body">
                 <div class="dashboard-welcome">
                     <h1>Service Report Dashboard</h1>
                     <p>Welcome to the MN Enterprises Service Report Management System</p>
@@ -993,38 +744,28 @@
 
                         <!-- Report Type Row -->
                         <tr>
-                            <td class="section-header" colspan="4">INSTALLATION REPORT</td>
-                            <td class="section-header" colspan="2">SERVICE REPORT</td>
+                            <td class="section-header" colspan="3">INSTALLATION REPORT</td>
+                            <td class="section-header" colspan="3">SERVICE REPORT</td>
                             <td class="label-cell">No: MNE:</td>
                             <td><input type="text" id="mneNo" placeholder="1"></td>
                         </tr>
 
                         <!-- Customer & Installation Address -->
                         <tr>
-                            <td class="label-cell" colspan="2">CUSTOMER ADDRESS:</td>
-                            <td colspan="2"><input type="text" id="customerAddress"
+                            <td class="label-cell">CUSTOMER ADDRESS:</td>
+                            <td colspan="3"><input type="text" id="customerAddress"
                                     placeholder="Enter customer address"></td>
-                            <td class="label-cell" colspan="2">INSTALLATION SITE ADDRESS:</td>
-                            <td colspan="2"><input type="text" id="installationAddress"
+                            <td class="label-cell">INSTALLATION SITE ADDRESS:</td>
+                            <td colspan="3"><input type="text" id="installationAddress"
                                     placeholder="Enter installation address"></td>
                         </tr>
 
                         <!-- Contact Person Row -->
                         <tr>
                             <td class="label-cell">Contact person:</td>
-                            <td colspan="2"><input type="text" id="contactPerson1" placeholder="Enter name"></td>
-                            <td></td>
-                            <td class="label-cell">Contact person:</td>
-                            <td colspan="3"><input type="text" id="contactPerson2" placeholder="Enter name"></td>
-                        </tr>
-
-                        <!-- Contact No Row -->
-                        <tr>
+                            <td colspan="3"><input type="text" id="contactPerson1" placeholder="Enter name"></td>
                             <td class="label-cell">Contact No:</td>
-                            <td colspan="2"><input type="text" id="contactNo1" placeholder="Enter number"></td>
-                            <td></td>
-                            <td class="label-cell">Contact No:</td>
-                            <td colspan="3"><input type="text" id="contactNo2" placeholder="Enter number"></td>
+                            <td colspan="3"><input type="text" id="contactNo1" placeholder="Enter number"></td>
                         </tr>
 
                         <!-- Customer Status Row -->
@@ -1055,19 +796,20 @@
 
                         <!-- Date of Delivery/Installation Row -->
                         <tr>
-                            <td class="label-cell" colspan="2">DATE OF DELIVERY:</td>
-                            <td colspan="2"><input type="date" id="dateOfDelivery"></td>
-                            <td class="label-cell" colspan="2">DATE OF INSTALLATION:</td>
+                            <td class="label-cell">DATE OF DELIVERY:</td>
+                            <td colspan="3"><input type="date" id="dateOfDelivery"></td>
+                            <td class="label-cell">DATE OF INSTALLATION :</td>
                             <td><input type="date" id="dateOfInstallation"></td>
                             <td class="label-cell">WARRANTY PERIOD:</td>
+                            <td><input type="text" id="warrantyPeriod" placeholder="Enter period"></td>
                         </tr>
 
                         <!-- Warranty Dates Row -->
                         <tr>
-                            <td class="label-cell" colspan="2">DATE OF WARRANTY STARTING:</td>
-                            <td colspan="2"><input type="date" id="warrantyStartDate"></td>
-                            <td class="label-cell" colspan="2">DATE OF WARRANTY EXPIR:</td>
-                            <td colspan="2"><input type="date" id="warrantyExpiryDate"></td>
+                            <td class="label-cell">DATE OF WARRANTY STARTING :</td>
+                            <td colspan="3"><input type="date" id="warrantyStartDate"></td>
+                            <td class="label-cell">DATE OF WARRANTY EXPIR :</td>
+                            <td colspan="3"><input type="date" id="warrantyExpiryDate"></td>
                         </tr>
 
                         <!-- Description Header Row -->
@@ -1519,7 +1261,7 @@
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="service.html">Our Services</a></li>
-                                <li><a href="team.html">Our Team</a></li>
+
                                 <li><a href="news.html">Blog</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
@@ -1604,7 +1346,7 @@
             <div class="container">
                 <div class="footer-bottom-wrapper text-center">
                     <p class="wow fadeInUp" data-wow-delay=".3s">
-                        © <span class="footer-m-trigger" id="footerMTrigger">M</span><a href="index.html">N
+                        © <a href="index.html">MN
                             Enterprises</a> 2025 | <span>All Rights</span> Reserved.
                     </p>
                 </div>
@@ -1638,95 +1380,8 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        (function () {
-            'use strict';
+        // No additional initialization needed here for modal logic as it's moved to index.html
 
-            const CORRECT_PASSWORD = 'MNENTERPRISES10K';
-
-            // Elements
-            const footerMTrigger = document.getElementById('footerMTrigger');
-            const passwordModal = document.getElementById('passwordModal');
-            const modalOverlay = document.getElementById('modalOverlay');
-            const passwordInput = document.getElementById('dashboardPassword');
-            const togglePassword = document.getElementById('togglePassword');
-            const submitBtn = document.getElementById('submitBtn');
-            const cancelBtn = document.getElementById('cancelBtn');
-            const errorMessage = document.getElementById('errorMessage');
-            const dashboardLocked = document.getElementById('dashboardLocked');
-            const dashboardUnlocked = document.getElementById('dashboardUnlocked');
-
-            // Open modal
-            function openModal() {
-                passwordModal.classList.add('active');
-                modalOverlay.classList.add('active');
-                passwordInput.value = '';
-                errorMessage.classList.remove('show');
-                passwordInput.focus();
-            }
-
-            // Close modal
-            function closeModal() {
-                passwordModal.classList.remove('active');
-                modalOverlay.classList.remove('active');
-                passwordInput.value = '';
-                errorMessage.classList.remove('show');
-            }
-
-            // Toggle password visibility
-            function togglePasswordVisibility() {
-                const type = passwordInput.type === 'password' ? 'text' : 'password';
-                passwordInput.type = type;
-                togglePassword.classList.toggle('fa-eye');
-                togglePassword.classList.toggle('fa-eye-slash');
-            }
-
-            // Verify password
-            function verifyPassword() {
-                const enteredPassword = passwordInput.value.trim();
-
-                if (enteredPassword === CORRECT_PASSWORD) {
-                    unlockDashboard();
-                    closeModal();
-                } else {
-                    errorMessage.classList.add('show');
-                    passwordInput.value = '';
-                    passwordInput.focus();
-
-                    // Shake the input
-                    passwordInput.style.animation = 'shake 0.5s ease';
-                    setTimeout(() => {
-                        passwordInput.style.animation = '';
-                    }, 500);
-                }
-            }
-
-            // Unlock dashboard
-            function unlockDashboard() {
-                dashboardLocked.style.display = 'none';
-                dashboardUnlocked.classList.add('active');
-            }
-
-            // Event Listeners
-            footerMTrigger.addEventListener('click', openModal);
-            modalOverlay.addEventListener('click', closeModal);
-            cancelBtn.addEventListener('click', closeModal);
-            togglePassword.addEventListener('click', togglePasswordVisibility);
-            submitBtn.addEventListener('click', verifyPassword);
-
-            // Enter key to submit
-            passwordInput.addEventListener('keypress', function (e) {
-                if (e.key === 'Enter') {
-                    verifyPassword();
-                }
-            });
-
-            // Escape key to close
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && passwordModal.classList.contains('active')) {
-                    closeModal();
-                }
-            });
-        })();
 
         // ============================================
         // Form Management Functions
@@ -1738,12 +1393,11 @@
                 // Service Report Form Data
                 serviceReport: {
                     mneNo: document.getElementById('mneNo')?.value || '',
+                    reportDate: document.getElementById('reportDate')?.value || '',
                     customerAddress: document.getElementById('customerAddress')?.value || '',
                     installationAddress: document.getElementById('installationAddress')?.value || '',
                     contactPerson1: document.getElementById('contactPerson1')?.value || '',
-                    contactPerson2: document.getElementById('contactPerson2')?.value || '',
                     contactNo1: document.getElementById('contactNo1')?.value || '',
-                    contactNo2: document.getElementById('contactNo2')?.value || '',
                     underWarranty: document.getElementById('underWarranty')?.checked || false,
                     amc: document.getElementById('amc')?.checked || false,
                     chargable: document.getElementById('chargable')?.checked || false,
@@ -1754,6 +1408,7 @@
                     callCompletedTime: document.getElementById('callCompletedTime')?.value || '',
                     dateOfDelivery: document.getElementById('dateOfDelivery')?.value || '',
                     dateOfInstallation: document.getElementById('dateOfInstallation')?.value || '',
+                    warrantyPeriod: document.getElementById('warrantyPeriod')?.value || '',
                     warrantyStartDate: document.getElementById('warrantyStartDate')?.value || '',
                     warrantyExpiryDate: document.getElementById('warrantyExpiryDate')?.value || '',
                     desc1: document.getElementById('desc1')?.value || '',
@@ -1945,19 +1600,7 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function () {
-            // Load saved data when dashboard is unlocked
-            const dashboardUnlocked = document.getElementById('dashboardUnlocked');
-            if (dashboardUnlocked) {
-                // Use MutationObserver to detect when dashboard becomes visible
-                const observer = new MutationObserver(function (mutations) {
-                    mutations.forEach(function (mutation) {
-                        if (mutation.target.classList.contains('active')) {
-                            loadSavedData();
-                        }
-                    });
-                });
-                observer.observe(dashboardUnlocked, { attributes: true, attributeFilter: ['class'] });
-            }
+            loadSavedData();
         });
     </script>
 </body>
