@@ -38,10 +38,24 @@
     <link rel="stylesheet" href="assets/css/footer-custom.css">
 
     <style>
+        /* Prevent horizontal scroll on body */
+        html,
+        body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
         /* Dashboard Content Styles */
         .dashboard-content {
             min-height: 60vh;
             padding: 150px 40px 100px 40px;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .dashboard-content .container {
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         .dashboard-welcome {
@@ -77,11 +91,14 @@
             margin: 0 auto 30px auto;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
             width: 100%;
+            max-width: 100%;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .report-form {
             width: 100%;
+            max-width: 100%;
             border-collapse: collapse;
             font-family: 'Arial', sans-serif;
             font-size: 11px;
@@ -218,6 +235,15 @@
             width: 80px;
         }
 
+        /* Readonly input styling */
+        .report-form input[readonly],
+        .serial-form input[readonly] {
+            background-color: #f0f0f0 !important;
+            cursor: not-allowed;
+            font-weight: 600;
+            color: #333 !important;
+        }
+
         .report-form .signature-cell {
             height: 60px;
             vertical-align: top;
@@ -230,6 +256,7 @@
         /* Serial Numbers Table Styles */
         .serial-form {
             width: 100%;
+            max-width: 100%;
             border-collapse: collapse;
             font-family: 'Arial', sans-serif;
             font-size: 12px;
@@ -311,13 +338,15 @@
             /* Reset page margins and setup for portrait */
             @page {
                 size: A4 portrait;
-                margin: 10mm;
+                margin: 8mm 5mm 8mm 5mm;
             }
 
             /* Reset dashboard content for print */
             .dashboard-content {
                 padding: 0 !important;
                 min-height: auto !important;
+                margin: 0 !important;
+                overflow: visible !important;
             }
 
             .dashboard-unlocked {
@@ -327,10 +356,12 @@
 
             .service-report-container {
                 box-shadow: none !important;
-                padding: 5px !important;
-                margin-bottom: 15px !important;
+                padding: 0 !important;
+                margin: 0 0 5mm 0 !important;
                 page-break-after: always;
                 width: 100% !important;
+                max-width: 100% !important;
+                overflow: visible !important;
             }
 
             .service-report-container:last-of-type {
@@ -341,43 +372,90 @@
             .serial-form {
                 page-break-inside: avoid;
                 width: 100% !important;
-                font-size: 10px !important;
+                max-width: 100% !important;
+                font-size: 7px !important;
+                margin: 0 !important;
+                border-collapse: collapse !important;
+                table-layout: fixed !important;
             }
 
             .report-form th,
             .report-form td,
             .serial-form th,
             .serial-form td {
-                padding: 3px 4px !important;
-                font-size: 10px !important;
+                padding: 1px 2px !important;
+                font-size: 7px !important;
+                border: 1px solid #000 !important;
+                word-wrap: break-word !important;
+                overflow: hidden !important;
             }
 
             .report-form input,
             .report-form textarea,
             .serial-form input,
             .serial-form textarea {
-                font-size: 10px !important;
+                font-size: 7px !important;
+                padding: 0px 1px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
             }
 
             .report-form .company-name {
-                font-size: 18px !important;
+                font-size: 14px !important;
+                font-weight: bold !important;
             }
 
             .report-form .company-address,
             .report-form .company-contact {
-                font-size: 9px !important;
+                font-size: 7px !important;
             }
 
             body {
                 background: #fff !important;
                 margin: 0 !important;
                 padding: 0 !important;
+                overflow: visible !important;
             }
 
             .container {
                 max-width: 100% !important;
+                width: 100% !important;
                 padding: 0 !important;
-                margin: 0 auto !important;
+                margin: 0 !important;
+            }
+
+            /* Ensure logo and header cells fit properly */
+            .report-form .logo-cell {
+                width: 60px !important;
+                padding: 2px !important;
+            }
+
+            .report-form .logo-cell img {
+                max-width: 55px !important;
+                height: auto !important;
+            }
+
+            /* Optimize label cells */
+            .report-form .label-cell,
+            .serial-form .label-cell {
+                white-space: nowrap !important;
+                font-size: 6px !important;
+                padding: 1px !important;
+            }
+
+            /* Optimize section headers */
+            .report-form .section-header,
+            .serial-form .section-header {
+                font-size: 7px !important;
+                font-weight: bold !important;
+                padding: 1px !important;
+            }
+
+            /* Optimize checkboxes */
+            .report-form input[type="checkbox"],
+            .serial-form input[type="checkbox"] {
+                width: 10px !important;
+                height: 10px !important;
             }
         }
 
@@ -436,13 +514,96 @@
         /* Responsive adjustments */
         @media (max-width: 992px) {
             .service-report-container {
-                padding: 15px;
+                padding: 10px;
                 overflow-x: auto;
             }
 
             .report-form,
             .serial-form {
-                min-width: 800px;
+                min-width: 100%;
+                font-size: 9px;
+            }
+
+            .report-form th,
+            .report-form td,
+            .serial-form th,
+            .serial-form td {
+                padding: 2px 3px;
+                font-size: 9px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-content {
+                padding: 120px 15px 60px 15px;
+            }
+
+            .dashboard-welcome {
+                padding: 30px 20px;
+                margin-bottom: 20px;
+            }
+
+            .dashboard-welcome h1 {
+                font-size: 28px;
+            }
+
+            .dashboard-welcome p {
+                font-size: 14px;
+            }
+
+            .service-report-container {
+                padding: 5px;
+                margin-bottom: 15px;
+            }
+
+            .report-form,
+            .serial-form {
+                font-size: 8px;
+            }
+
+            .report-form th,
+            .report-form td,
+            .serial-form th,
+            .serial-form td {
+                padding: 2px;
+                font-size: 8px;
+            }
+
+            .report-form input,
+            .report-form textarea,
+            .serial-form input,
+            .serial-form textarea {
+                font-size: 8px;
+                padding: 2px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .form-actions .btn {
+                width: 100%;
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dashboard-content {
+                padding: 100px 10px 40px 10px;
+            }
+
+            .dashboard-welcome {
+                padding: 20px 15px;
+            }
+
+            .dashboard-welcome h1 {
+                font-size: 24px;
+            }
+
+            .dashboard-welcome p {
+                font-size: 12px;
             }
         }
 
@@ -651,7 +812,7 @@
                                             </a>
                                         </li>
                                         <li class="has-dropdown d-xl-none">
-                                            <a href="team.html" class="border-none">
+                                            <a href="index.html" class="border-none">
                                                 Home
                                                 <i class="fas fa-angle-down"></i>
                                             </a>
@@ -823,7 +984,7 @@
 
                         <!-- ONGRID/SHU/PCU Row -->
                         <tr>
-                            <td><input type="text" id="desc1" value="ONGRID/SHU/PCU"></td>
+                            <td><input type="text" id="desc1" value="ONGRID/SHU/PCU" readonly></td>
                             <td><input type="text" id="rating1" placeholder="Rating"></td>
                             <td><input type="text" id="qty1" placeholder="Qty"></td>
                             <td><input type="text" id="make1" placeholder="Make/Model"></td>
@@ -835,7 +996,7 @@
 
                         <!-- BATTERY Row -->
                         <tr>
-                            <td><input type="text" id="desc2" value="BATTERY"></td>
+                            <td><input type="text" id="desc2" value="BATTERY" readonly></td>
                             <td><input type="text" id="rating2" placeholder="Rating"></td>
                             <td><input type="text" id="qty2" placeholder="Qty"></td>
                             <td><input type="text" id="make2" placeholder="Make/Model"></td>
@@ -847,7 +1008,7 @@
 
                         <!-- SOLAR PV PANELS Row -->
                         <tr>
-                            <td><input type="text" id="desc3" value="SOLAR PV PANELS"></td>
+                            <td><input type="text" id="desc3" value="SOLAR PV PANELS" readonly></td>
                             <td><input type="text" id="rating3" placeholder="Rating"></td>
                             <td><input type="text" id="qty3" placeholder="Qty"></td>
                             <td><input type="text" id="make3" placeholder="Make/Model"></td>
