@@ -13,11 +13,14 @@
     <title>MN-Enterprises</title>
     <!--<< Favicon >>-->
     <link rel="shortcut icon" href="assets/img/logo/MN LOGO.svg">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/img/hero/hero-min.jpg" as="image">
+    <link rel="preload" href="assets/css/main.css" as="style">
     <!--<< Bootstrap min.css >>-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!--<< Font Awesome.css >>-->
     <link rel="stylesheet" href="assets/css/font-awesome.css">
-    <script src="https://kit.fontawesome.com/630ffb3b6c.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/630ffb3b6c.js" crossorigin="anonymous" defer></script>
     <!--<< Animate.css >>-->
     <link rel="stylesheet" href="assets/css/animate.css">
     <!--<< Magnific Popup.css >>-->
@@ -210,6 +213,148 @@
             position: relative;
             color: inherit !important;
         }
+
+        .news-card-items-2 {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card-items-2:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .news-image {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-button {
+            padding: 20px 25px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Testimonial Section Redesign */
+        .testimonial-section {
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 0 !important;
+        }
+
+        .testimonial-wrapper {
+            padding: 30px 0;
+        }
+
+        .testimonial-section .section-title {
+            margin-bottom: 30px !important;
+        }
+
+        .testimonial-box-items {
+            background: #ffffff;
+            padding: 25px 30px;
+            border-radius: 20px;
+            border: 1px solid #e1e8dc;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            margin: 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-box-items:hover {
+            border-color: #556B2F;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(85, 107, 47, 0.1);
+        }
+
+        .testimonial-box-items .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 40px;
+            color: #f0f0f0;
+            z-index: 0;
+        }
+
+        .testimonial-box-items .star {
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-box-items .star i {
+            color: #ffc107;
+            font-size: 13px;
+            margin-right: 2px;
+        }
+
+        .testimonial-box-items p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            flex-grow: 1;
+        }
+
+        .client-info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .client-info-item .avatar {
+            width: 50px;
+            height: 50px;
+            background: #f4f7f2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #556B2F;
+            font-weight: 700;
+            font-size: 18px;
+            border: 2px solid #e1e8dc;
+        }
+
+        .client-info-item .content h5 {
+            margin-bottom: 2px;
+            font-size: 18px;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .client-info-item .content span {
+            font-size: 14px;
+            color: #777;
+            display: block;
+        }
     </style>
 </head>
 
@@ -386,22 +531,8 @@
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li class="has-dropdown active menu-thumb">
-                                            <a href="index.html">
-                                                Home
-                                                <!-- <i class="fas fa-angle-down"></i> -->
-                                            </a>
-                                        </li>
-                                        <li class="has-dropdown active d-xl-none">
-                                            <a href="index.html" class="border-none">
-                                                Home
-                                                <i class="fas fa-angle-down"></i>
-                                            </a>
-                                            <ul class="submenu">
-                                                <li><a href="index.html">Home 01</a></li>
-                                                <li><a href="index-2.html">Home 02</a></li>
-                                                <li><a href="index-3.html">Home 03</a></li>
-                                            </ul>
+                                        <li class="active">
+                                            <a href="index.html">Home</a>
                                         </li>
                                         <li><a href="service.html">Services</a></li>
                                         <li>
@@ -477,9 +608,9 @@
                     <div class="col-lg-6">
                         <div class="about-image">
                             <div class="frame-shape">
-                                <img src="assets/img/about/pattern.png" alt="img">
+                                <img src="assets/img/about/pattern.png" alt="img" loading="lazy">
                             </div>
-                            <img src="assets/img/about/solar5.png" alt="img" class="wow fadeInLeft"
+                            <img src="assets/img/about/solar5.png" alt="img" class="wow fadeInLeft" loading="lazy"
                                 data-wow-delay=".3s">
                             <!-- <div class="about-image-2 wow fadeInUp" data-wow-delay=".5s">
                                 <img src="assets/img/about/woman-meditates-on-rooftop-of-her-house-with-solar-2025-03-15-19-41-12-utc.JPG"
@@ -580,7 +711,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy1.jpg" alt="service-img">
+                                <img src="assets/img/service/energy1.jpg" alt="service-img" loading="lazy">
                                 <div class="icon">
                                     <i class="fas fa-solar-panel" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -599,7 +730,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy2.jpg" alt="service-img">
+                                <img src="assets/img/service/energy2.jpg" alt="service-img" loading="lazy">
                                 <div class="icon">
                                     <i class="fas fa-plug" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -618,7 +749,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy3.jpg" alt="service-img">
+                                <img src="assets/img/service/energy3.jpg" alt="service-img" loading="lazy">
                                 <div class="icon">
                                     <i class="fas fa-battery-full" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -637,7 +768,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy4.jpg" alt="service-img">
+                                <img src="assets/img/service/energy4.jpg" alt="service-img" loading="lazy">
                                 <div class="icon">
                                     <i class="fas fa-car-battery" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -656,7 +787,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy5.jpg" alt="service-img">
+                                <img src="assets/img/service/energy5.jpg" alt="service-img" loading="lazy">
                                 <div class="icon">
                                     <i class="fas fa-video" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -675,7 +806,7 @@
                                 <p></p>
                             </div>
                             <div class="service-thumb">
-                                <img src="assets/img/service/energy6.jpg" alt="service-img">
+                                <img src="assets/img/service/energy6.jpg" alt="service-img" loading="lazy">
                                 <div class="icon">
                                     <i class="fas fa-desktop" style="font-size: 48px; color: #6b8e23;"></i>
                                 </div>
@@ -704,7 +835,7 @@
             <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
                 <div class="portfolio-card-items">
                     <div class="portfolio-image">
-                        <img src="assets/img/portfolio/p7.jpg" alt="img">
+                        <img src="assets/img/portfolio/p7.jpg" alt="img" loading="lazy">
 
                     </div>
                 </div>
@@ -712,7 +843,7 @@
             <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
                 <div class="portfolio-card-items">
                     <div class="portfolio-image">
-                        <img src="assets/img/portfolio/p8.jpg" alt="img">
+                        <img src="assets/img/portfolio/p8.jpg" alt="img" loading="lazy">
 
                     </div>
                 </div>
@@ -720,7 +851,7 @@
             <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".2s">
                 <div class="portfolio-card-items">
                     <div class="portfolio-image">
-                        <img src="assets/img/portfolio/p1.jpg" alt="img">
+                        <img src="assets/img/portfolio/p1.jpg" alt="img" loading="lazy">
 
                     </div>
                 </div>
@@ -728,7 +859,7 @@
             <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
                 <div class="portfolio-card-items">
                     <div class="portfolio-image">
-                        <img src="assets/img/portfolio/p2.jpg" alt="img">
+                        <img src="assets/img/portfolio/p2.jpg" alt="img" loading="lazy">
 
                     </div>
                 </div>
@@ -736,7 +867,7 @@
             <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
                 <div class="portfolio-card-items">
                     <div class="portfolio-image">
-                        <img src="assets/img/portfolio/p3.jpg" alt="img">
+                        <img src="assets/img/portfolio/p3.jpg" alt="img" loading="lazy">
 
                     </div>
                 </div>
@@ -744,7 +875,7 @@
             <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
                 <div class="portfolio-card-items">
                     <div class="portfolio-image">
-                        <img src="assets/img/portfolio/p4.jpg" alt="img">
+                        <img src="assets/img/portfolio/p4.jpg" alt="img" loading="lazy">
 
                     </div>
                 </div>
@@ -752,7 +883,7 @@
             <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".7s">
                 <div class="portfolio-card-items">
                     <div class="portfolio-image">
-                        <img src="assets/img/portfolio/p5.jpg" alt="img">
+                        <img src="assets/img/portfolio/p5.jpg" alt="img" loading="lazy">
 
                     </div>
                 </div>
@@ -760,7 +891,7 @@
             <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
                 <div class="portfolio-card-items">
                     <div class="portfolio-image">
-                        <img src="assets/img/portfolio/p6.jpg" alt="img">
+                        <img src="assets/img/portfolio/p6.jpg" alt="img" loading="lazy">
 
                     </div>
                 </div>
@@ -810,7 +941,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                             <div class="number-talks-thumb">
-                                <img src="assets/img/mn img.jpg" alt="img">
+                                <img src="assets/img/mn img.jpg" alt="img" loading="lazy">
                             </div>
                         </div>
                         <div class="col-lg-6 mt-4 mt-lg-0">
@@ -888,7 +1019,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="team-card-items">
                         <div class="team-image">
-                            <img src="assets/img/team/04.jpg" alt="img">
+                            <img src="assets/img/team/madhusudhan1.jpg" alt="img" loading="lazy">
                         </div>
                         <div class="team-content">
                             <h5><a href="#">Mr. K. Madhu Sudhan</a></h5>
@@ -907,7 +1038,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                     <div class="team-card-items">
                         <div class="team-image">
-                            <img src="assets/img/team/05.jpg" alt="img">
+                            <img src="assets/img/team/ramamohan2.jpg" alt="img" loading="lazy">
                         </div>
                         <div class="team-content">
                             <h5><a href="#">Mr. K. Rama Mohan</a></h5>
@@ -926,7 +1057,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                     <div class="team-card-items">
                         <div class="team-image">
-                            <img src="assets/img/team/06.jpg" alt="img">
+                            <img src="assets/img/team/anjaneyulu3.jpg" alt="img" loading="lazy">
                         </div>
                         <div class="team-content">
                             <h5><a href="#">Mr. Anjaneyulu </a></h5>
@@ -948,34 +1079,40 @@
 
     <!-- Contact Section Start -->
     <section class="contact-section-3 section-padding section-bg" style="margin-top: -50px;">
-        <div class="contact-image">
-            <img src="assets/img/portrait-of-young-indian-male-engineer-standing-ne-2025-03-14-15-31-13-utc.jpg"
-                alt="img">
-        </div>
         <div class="container">
             <div class="contact-wrapper-2">
-                <div class="row">
-                    <div class="col-xl-6">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
                         <div class="contact-content">
-                            <div class="section-title">
+                            <div class="section-title text-center">
                                 <span class="wow fadeInUp">Talk to us</span>
                                 <h2 class="wow fadeInUp" data-wow-delay=".3s">Ready to Go Solar? Let's Talk</h2>
                             </div>
-                            <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
+                            <p class="mt-3 mt-md-0 wow fadeInUp text-center" data-wow-delay=".5s">
                                 Whether you're looking for residential solar, commercial power solutions, or complete
                                 energy independence—our team is here to guide you. Get a free consultation and
                                 customized quote for your energy needs.
                             </p>
                             <div class="mt-4 mb-4 wow fadeInUp" data-wow-delay=".6s">
-                                <h5 style="margin-bottom: 15px;">Why Choose MN Enterprises:</h5>
-                                <ul style="list-style-type: disc; padding-left: 25px; line-height: 1.8;">
-                                    <li>Free site assessment and energy audit</li>
-                                    <li>Customized solar and power solutions</li>
-                                    <li>Transparent pricing with no hidden costs</li>
-                                    <li>Professional installation by experienced engineers</li>
-                                    <li>Comprehensive after-sales support and maintenance</li>
-                                    <li>Proven track record with 10,000+ installations</li>
-                                </ul>
+                                <h5 class="text-center" style="margin-bottom: 25px;">Why Choose MN Enterprises:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul
+                                            style="list-style-type: disc; padding-left: 25px; line-height: 2; margin-bottom: 0;">
+                                            <li>Free site assessment and energy audit</li>
+                                            <li>Customized solar and power solutions</li>
+                                            <li>Transparent pricing with no hidden costs</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul
+                                            style="list-style-type: disc; padding-left: 25px; line-height: 2; margin-bottom: 0;">
+                                            <li>Professional installation by experienced engineers</li>
+                                            <li>Comprehensive after-sales support and maintenance</li>
+                                            <li>Proven track record with 10,000+ installations</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                             <form action="#" id="contact-form" method="POST" class="mt-4">
                                 <div class="row g-4">
@@ -1048,7 +1185,7 @@
                                                 placeholder="Your Message/Requirements*" required></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".8s">
+                                    <div class="col-lg-12 wow fadeInUp text-center" data-wow-delay=".8s">
                                         <button type="submit" class="theme-btn">
                                             Get Free Consultation <i class="fa-solid fa-square-arrow-up-right"></i>
                                         </button>
@@ -1057,14 +1194,13 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-8"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Work Process Section Start -->
-    <section class="work-process-section fix section-padding">
+    <section class="work-process-section fix section-padding" style="padding-bottom: 30px !important;">
         <div class="container">
             <div class="section-title text-center">
                 <span class="wow fadeInUp">work process</span>
@@ -1077,7 +1213,7 @@
             <div class="row">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="work-process-thumb" style="margin-top: 195px;">
-                        <img src="assets/img/process.avif" alt="img">
+                        <img src="assets/img/process.avif" alt="img" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -1120,60 +1256,60 @@
     </section>
 
     <!-- Testimonial Section Start -->
-    <section class="testimonial-section fix section-padding" style="margin-top: -170px;">
-        <div class="map-shape">
-            <img src="assets/img/testimonial/reviews.png" alt="shape-img">
-        </div>
+    <section class="testimonial-section fix section-padding">
         <div class="container">
-            <div class="section-title text-center" style="padding-top: 20px;"><br>
-                <span class="wow fadeInUp">Clients review</span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">Client Testimonials
-                </h2>
+            <div class="section-title text-center">
+                <span class="wow fadeInUp"
+                    style="color: #556B2F; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Success
+                    Stories</span>
+                <h2 class="wow fadeInUp" data-wow-delay=".3s" style="margin-top: 10px; font-weight: 800;">What Our
+                    Clients Say</h2>
+                <div style="width: 70px; height: 4px; background: #556B2F; margin: 20px auto; border-radius: 2px;">
+                </div>
             </div>
-            <div class="swiper testimonial-slider">
+            <div class="swiper testimonial-slider testimonial-wrapper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="testimonial-box-items">
+                            <i class="fas fa-quote-right quote-icon"></i>
                             <div class="star">
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                             <p>
-                                MN Enterprises installed a 5kW solar system on our home, and we've seen our electricity
-                                bill
-                                drop by 70%. The team was professional, the installation was quick, and the system has
-                                been
-                                running flawlessly for months. Highly recommended!
+                                "MN Enterprises installed a 5kW solar system on our home, and we've seen our electricity
+                                bill drop by 70%. The team was professional, the installation was quick, and the system
+                                has been running flawlessly for months. Highly recommended!"
                             </p>
                             <div class="client-info-item">
-                                <!-- <div class="client-img bg-cover"
-                                    style="background-image: url('assets/img/testimonial/client-7.png');"></div> -->
+                                <div class="avatar">RK</div>
                                 <div class="content">
                                     <h5>Mr. Ramesh Kumar</h5>
-                                    <span>Homeowner, Anantapur </span>
+                                    <span>Homeowner, Anantapur</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-box-items">
+                            <i class="fas fa-quote-right quote-icon"></i>
                             <div class="star">
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                             <p>
-                                We needed a reliable power backup solution for our manufacturing unit. MN Enterprises
+                                "We needed a reliable power backup solution for our manufacturing unit. MN Enterprises
                                 provided a complete setup with UPS, inverters, and batteries. Zero downtime since
-                                installation.
-                                Excellent service!
+                                installation. Excellent service!"
                             </p>
                             <div class="client-info-item">
-                                <!-- <div class="client-img bg-cover"
-                                    style="background-image: url('assets/img/testimonial/client-8.png');"></div> -->
+                                <div class="avatar">PR</div>
                                 <div class="content">
                                     <h5>Ms. Priya Reddy</h5>
                                     <span>Factory Owner, Anantapur</span>
@@ -1183,22 +1319,21 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-box-items">
+                            <i class="fas fa-quote-right quote-icon"></i>
                             <div class="star">
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                             <p>
-                                As a farmer, inconsistent power supply was a major challenge for irrigation. The
-                                off-grid solar
-                                system from MN Enterprises has been a game-changer—reliable power whenever we need it.
-                                Great investment!
+                                "As a farmer, inconsistent power supply was a major challenge for irrigation. The
+                                off-grid solar system from MN Enterprises has been a game-changer—reliable power
+                                whenever we need it. Great investment!"
                             </p>
                             <div class="client-info-item">
-                                <!-- <div class="client-img bg-cover"
-                                    style="background-image: url('assets/img/testimonial/client-9.png');"></div> -->
+                                <div class="avatar">VN</div>
                                 <div class="content">
                                     <h5>Mr. Venkatesh Naidu</h5>
                                     <span>Farmer, Rural Anantapur</span>
@@ -1208,20 +1343,21 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-box-items">
+                            <i class="fas fa-quote-right quote-icon"></i>
                             <div class="star">
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
-                                <span class="fas fa-star"></span>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                             <p>
-                                Professional team, quality products, and transparent pricing. MN Enterprises handled our
-                                commercial solar project from start to finish without any hassles. Very satisfied with
-                                their work!
+                                "Professional team, quality products, and transparent pricing. MN Enterprises handled
+                                our commercial solar project from start to finish without any hassles. Very satisfied
+                                with their work!"
                             </p>
                             <div class="client-info-item">
-                                <!-- <div class="client-img bg-cover"
-                                    style="background-image: url('assets/img/testimonial/client-8.png');"></div> -->
+                                <div class="avatar">SB</div>
                                 <div class="content">
                                     <h5>Mr. Suresh Babu</h5>
                                     <span>Business Owner, Anantapur</span>
@@ -1235,7 +1371,7 @@
     </section>
 
     <!-- News Section Start -->
-    <section class="news-section fix section-padding">
+    <section class="news-section fix section-padding" style="padding-top: 30px !important;">
         <div class="container">
             <div class="section-title-area">
                 <div class="section-title">
@@ -1245,7 +1381,7 @@
                 <a href="news.html" class="theme-btn wow fadeInUp" data-wow-delay=".5s">Discover More <i
                         class="fas fa-arrow-right-long"></i></a>
             </div>
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div class="news-card-items-2">
                         <div class="news-content">
@@ -1258,7 +1394,7 @@
                             <h5><a href="news.html">Benefits of Solar Energy for Anantapur Residents</a></h5>
                         </div>
                         <div class="news-image">
-                            <img src="assets/img/news/07.jpg" alt="img">
+                            <img src="assets/img/news/post-1.jpg" alt="img" loading="lazy">
                         </div>
                         <div class="news-button">
                             <a href="news.html" class="link-btn">READ MORE <i class="far fa-plus"></i></a>
@@ -1278,7 +1414,7 @@
                                     for You?</a></h5>
                         </div>
                         <div class="news-image">
-                            <img src="assets/img/news/08.jpg" alt="img">
+                            <img src="assets/img/news/post-2.jpg" alt="img" loading="lazy">
                         </div>
                         <div class="news-button">
                             <a href="news.html" class="link-btn">READ MORE <i class="far fa-plus"></i></a>
@@ -1298,7 +1434,7 @@
                                     2025</a></h5>
                         </div>
                         <div class="news-image">
-                            <img src="assets/img/news/09.jpg" alt="img">
+                            <img src="assets/img/news/post-3.jpg" alt="img" loading="lazy">
                         </div>
                         <div class="news-button">
                             <a href="news.html" class="link-btn">READ MORE <i class="far fa-plus"></i></a>
@@ -1318,7 +1454,7 @@
                             </h5>
                         </div>
                         <div class="news-image">
-                            <img src="assets/img/news/10.jpg" alt="img">
+                            <img src="assets/img/news/post-4.jpg" alt="img" loading="lazy">
                         </div>
                         <div class="news-button">
                             <a href="news.html" class="link-btn">READ MORE <i class="far fa-plus"></i></a>
@@ -1459,25 +1595,17 @@
 
     <!--<< All JS Plugins >>-->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <!--<< Viewport Js >>-->
-    <script src="assets/js/viewport.jquery.js"></script>
     <!--<< Bootstrap Js >>-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!--<< Nice Select Js >>-->
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <!--<< Waypoints Js >>-->
-    <script src="assets/js/jquery.waypoints.js"></script>
-    <!--<< Counterup Js >>-->
-    <script src="assets/js/jquery.counterup.min.js"></script>
     <!--<< Swiper Slider Js >>-->
     <script src="assets/js/swiper-bundle.min.js"></script>
-    <!--<< Circle Progress Js >>-->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/circle-progress.js"></script>
-    <!--<< MeanMenu Js >>-->
     <script src="assets/js/jquery.meanmenu.min.js"></script>
-    <!--<< Magnific Popup Js >>-->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!--<< Wow Animation Js >>-->
     <script src="assets/js/wow.min.js"></script>
     <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>

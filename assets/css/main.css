@@ -7,8 +7,9 @@ Version: 1.0.0
 */
 
 /*CSS Table Of Content Ends Here*/
+/* Optimized font loading with font-display: swap for better performance */
 @import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 :root {
   --body: #fff;
