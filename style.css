@@ -301,22 +301,26 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     height: 100%;
 }
 
-/* Know More Strip Effect for Service Image */
+/* Know More Center Effect for Service Image */
 .service-image {
     position: relative;
     overflow: hidden;
+    background-color: #000;
+    /* Dark background to enhance blur effect */
 }
 
 .know-more-strip {
     position: absolute;
-    bottom: -50px;
-    left: 0;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    /* Start slightly lower for entrance effect */
+    width: auto;
+    min-width: 140px;
     background: rgba(85, 107, 47, 0.95);
-    /* Theme Color with transparency */
     color: #ffffff !important;
     text-align: center;
-    padding: 10px 0;
+    padding: 12px 25px;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
@@ -325,14 +329,28 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     z-index: 5;
     text-decoration: none;
     display: block;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .service-image:hover .know-more-strip {
-    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
 }
 
 .service-image img {
-    transition: transform 0.5s ease;
+    transition: all 0.5s ease;
+    display: block;
+    width: 100%;
+}
+
+.service-image:hover img {
+    filter: blur(4px);
+    opacity: 0.7;
+    transform: scale(1.1);
 }
 
 /* Fix for Left Navigation Button persistent highlight */
