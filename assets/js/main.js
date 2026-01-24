@@ -48,14 +48,14 @@
             loop: true,
             slidesPerView: 1,
             effect: "fade",
-            speed: 3000,
+            speed: 800,
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
             },
             navigation: {
-                nextEl: ".array-prev",
-                prevEl: ".array-next",
+                nextEl: ".array-next",
+                prevEl: ".array-prev",
             },
         });
 
@@ -161,7 +161,7 @@
         if ($('.team-slider').length > 0) {
             const teamSlider = new Swiper(".team-slider", {
                 spaceBetween: 30,
-                speed: 3000,
+                speed: 800,
                 loop: true,
                 centeredSlides: true,
                 autoplay: {
@@ -169,8 +169,8 @@
                     disableOnInteraction: false,
                 },
                 navigation: {
-                    nextEl: ".array-prev",
-                    prevEl: ".array-next",
+                    nextEl: ".array-next",
+                    prevEl: ".array-prev",
                 },
                 breakpoints: {
                     1199: {
@@ -196,7 +196,7 @@
         if ($('.testimonial-slider').length > 0) {
             const testimonialSlider = new Swiper(".testimonial-slider", {
                 spaceBetween: 30,
-                speed: 2000,
+                speed: 800,
                 loop: true,
                 centeredSlides: true,
                 autoplay: {
@@ -230,7 +230,7 @@
         if ($('.news-slider').length > 0) {
             const newsSlider = new Swiper(".news-slider", {
                 spaceBetween: 30,
-                speed: 2000,
+                speed: 800,
                 loop: true,
                 centeredSlides: true,
                 autoplay: {
@@ -238,8 +238,8 @@
                     disableOnInteraction: false,
                 },
                 navigation: {
-                    nextEl: ".array-prev",
-                    prevEl: ".array-next",
+                    nextEl: ".array-next",
+                    prevEl: ".array-prev",
                 },
                 breakpoints: {
                     1199: {
@@ -265,7 +265,7 @@
         if ($('.brand-slider').length > 0) {
             const brandSlider = new Swiper(".brand-slider", {
                 spaceBetween: 30,
-                speed: 2000,
+                speed: 800,
                 loop: true,
                 centeredSlides: true,
                 autoplay: {
@@ -273,8 +273,8 @@
                     disableOnInteraction: false,
                 },
                 navigation: {
-                    nextEl: ".array-prev",
-                    prevEl: ".array-next",
+                    nextEl: ".array-next",
+                    prevEl: ".array-prev",
                 },
                 breakpoints: {
                     1199: {
@@ -300,15 +300,15 @@
         if ($('.service-slider').length > 0) {
             const serviceSlider = new Swiper(".service-slider", {
                 spaceBetween: 30,
-                speed: 2000,
+                speed: 800,
                 loop: true,
                 autoplay: {
                     delay: 2000,
                     disableOnInteraction: false,
                 },
                 navigation: {
-                    nextEl: ".array-prev",
-                    prevEl: ".array-next",
+                    nextEl: ".array-next",
+                    prevEl: ".array-prev",
                 },
                 breakpoints: {
                     1199: {
@@ -359,6 +359,50 @@
         $(".search-trigger, .main-search-input").on("click", function (e) {
             e.stopPropagation();
         });
+
+        //>> Search Logic Start <<//
+        const teamMembers = [
+            "madhu sudhan", "madhusudhan", "k madhu sudhan", "mr k madhu sudhan",
+            "rama mohan", "ramamohan", "k rama mohan", "mr k rama mohan",
+            "anjaneyulu", "mr anjaneyulu",
+            "abdul shukur", "abdulshukur", "mr abdul shukur",
+            "mahesh babu", "maheshbabu", "d mahesh babu", "mr d mahesh babu",
+            "team members", "team member", "team", "our team"
+        ];
+
+        function performSearch(query) {
+            query = query.toLowerCase().trim();
+            if (!query) return;
+
+            if (query === "home") {
+                window.location.href = "index.html";
+            } else if (query === "services" || query === "service") {
+                window.location.href = "service.html";
+            } else if (query === "about us" || query === "aboutus" || query === "about") {
+                window.location.href = "about.html";
+            } else if (query === "blog" || query === "blogs") {
+                window.location.href = "news.html";
+            } else if (query === "contact" || query === "contact us") {
+                window.location.href = "contact.html";
+            } else if (teamMembers.includes(query)) {
+                window.location.href = "about.html#team";
+            } else {
+                window.location.href = "service.html";
+            }
+        }
+
+        $('.main-search-input').on('keypress', function (e) {
+            if (e.which == 13) {
+                e.preventDefault();
+                performSearch($(this).val());
+            }
+        });
+
+        $('.search-wrap form').on('submit', function (e) {
+            e.preventDefault();
+            performSearch($(this).find('.main-search-input').val());
+        });
+        //>> Search Logic End <<//
 
         //>> Mouse Cursor Start <<//
         function mousecursor() {

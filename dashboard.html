@@ -37,6 +37,15 @@
     <!--<< Footer Custom CSS >>-->
     <link rel="stylesheet" href="assets/css/footer-custom.css">
 
+    <script>
+        // Immediate access check before page renders
+        (function () {
+            if (sessionStorage.getItem('dashboardAccess') !== 'true') {
+                window.location.href = 'index.html';
+            }
+        })();
+    </script>
+
     <style>
         /* Prevent horizontal scroll on body */
         html,
@@ -769,7 +778,8 @@
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                                 <div class="offcanvas__contact-text">
-                                    <a href="tel:+919010100175">+919010100175,+919676468976</a>
+                                    <a href="tel:+919010100175">+919010100175</a>
+                                    <a href="tel:+919676468976">+919676468976</a>
                                 </div>
                             </li>
                         </ul>
@@ -779,10 +789,11 @@
                             </a>
                         </div>
                         <div class="social-icon d-flex align-items-center">
-                            <a href="https://www.facebook.com/share/1CZJM6XeSp/?mibextid=wwXIfr"><i
+                            <a href="https://www.facebook.com/share/1CZJM6XeSp" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/mnenterprises2025?igsh=emt5NjBpZmJvOXR6&utm_source=qr"><i
-                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/mnenterprises2025" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/919010100175" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -815,6 +826,9 @@
                                         </li>
                                         <li>
                                             <a href="news.html">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="gallery.html">Gallery</a>
                                         </li>
                                         <li>
                                             <a href="contact.html">Contact</a>
@@ -866,6 +880,10 @@
                 <div class="dashboard-welcome">
                     <h1>Service Report Dashboard</h1>
                     <p>Welcome to the MN Enterprises Service Report Management System</p>
+                    <button id="dashboardLogout" class="theme-btn mt-4"
+                        style="background: #fff; color: #6b8e23; border: 1px solid #6b8e23;">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
                 </div>
 
                 <!-- ============================================
@@ -1411,6 +1429,7 @@
                                 <li><a href="service.html">Our Services</a></li>
 
                                 <li><a href="news.html">Blog</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
                         </div>
@@ -1749,6 +1768,12 @@
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function () {
             loadSavedData();
+
+            // Logout functionalitiy
+            document.getElementById('dashboardLogout').addEventListener('click', function () {
+                sessionStorage.removeItem('dashboardAccess');
+                window.location.href = 'index.html';
+            });
         });
     </script>
 </body>
